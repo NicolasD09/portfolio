@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      <nuxt-link to="/about">About</nuxt-link>
       <h1 class="title">
         portfolio
       </h1>
