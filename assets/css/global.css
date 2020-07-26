@@ -1,13 +1,27 @@
+html {
+  font-family:
+    'Montserrat light',
+    sans-serif;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 /* Page transitions */
 .page-enter-active,
 .page-leave-active {
-  transition-property: opacity;
+  transition-property: all;
   transition-timing-function: ease-in-out;
-  transition-duration: 500ms;
+  transition-duration: .7s;
 }
 .page-enter,
 .page-leave-to {
   opacity: 0;
+  transform: translateY(15%);
 }
 
 /* Navlinks transitions */
