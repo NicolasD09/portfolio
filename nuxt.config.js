@@ -15,10 +15,13 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: "Développeur web à Montauban - Nicolas Durpoix",
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, user-scalable=no"
+      },
       {
         hid: "description",
         name: "description",
@@ -30,7 +33,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["assets/css/global.css"],
+  css: [
+    "assets/fonts/montserrat.css",
+    "assets/css/global.css"
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
