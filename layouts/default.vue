@@ -6,13 +6,12 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import { store } from "@/store/index.js";
 
 export default {
   data() {
     return {
-      // theme: store.state.theme
     };
   },
   components: {

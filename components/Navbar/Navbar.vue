@@ -10,7 +10,7 @@
           />
         </svg>
       </div>
-      <button @click="switchTheme">Switch</button>
+      <ThemeSwitch />
       <div class="hidden md:block">
         <nuxt-link class="mx-4" to="/">
           <span class="text-xl">Accueil</span>
@@ -71,8 +71,7 @@
 </template>
 
 <script>
-import { store } from "@/store/index.js";
-import Vue from 'vue';
+import ThemeSwitch from "@/components/ThemeSwitch/ThemeSwitch";
 
 export default {
   methods: {
@@ -81,9 +80,6 @@ export default {
       const nav = document.querySelector(".navbar");
       nav.classList.toggle("nav-active");
       burger.classList.toggle("toggle");
-    },
-    switchTheme() {
-      store.commit("switchTheme");
     },
   },
 };
