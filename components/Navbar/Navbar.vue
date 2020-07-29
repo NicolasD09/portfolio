@@ -10,7 +10,6 @@
           />
         </svg>
       </div>
-      <ThemeSwitch />
       <div class="hidden md:block">
         <nuxt-link class="mx-4" to="/">
           <span class="text-xl">Accueil</span>
@@ -32,32 +31,35 @@
           <span class="text-xl">Contact</span>
         </nuxt-link>
       </div>
+      <ThemeSwitch />
+
     </div>
+
     <div class="flex flex-col navbar">
       <ul>
-        <li class="my-3">
+        <li class="my-5">
           <nuxt-link to="/">
-            <span class="text-xl">Accueil</span>
+            <span class="text-md">Accueil</span>
           </nuxt-link>
         </li>
-        <li class="my-3">
+        <li class="my-5">
           <nuxt-link to="/projets">
-            <span class="text-xl">Projets</span>
+            <span class="text-md">Projets</span>
           </nuxt-link>
         </li>
-        <li class="my-3">
+        <li class="my-5">
           <nuxt-link to="/experiences">
-            <span class="text-xl">Expériences</span>
+            <span class="text-md">Expériences</span>
           </nuxt-link>
         </li>
-        <li class="my-3">
+        <li class="my-5">
           <nuxt-link to="/about">
-            <span class="text-xl">A propos</span>
+            <span class="text-md">A propos</span>
           </nuxt-link>
         </li>
-        <li class="my-3">
+        <li class="my-5">
           <nuxt-link to="/contact">
-            <span class="text-xl">Contact</span>
+            <span class="text-md">Contact</span>
           </nuxt-link>
         </li>
       </ul>
@@ -85,63 +87,5 @@ export default {
 };
 </script>
 
-<style scoped>
-.logo,
-.logo svg {
-  height: 86px;
-  widows: 206px;
-}
-.logo path {
-  fill: var(--bg-logo);
-}
-
-.navbar {
-  position: absolute;
-  right: 0;
-  height: 100%;
-  top: 0;
-  width: 20vh;
-  align-items: center;
-  transform: translateX(100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.navbar ul {
-  margin-top: 100px;
-}
-
-.burger {
-  cursor: pointer;
-  position: absolute;
-  right: 1em;
-  top: 1em;
-}
-
-.burger div {
-  width: 30px;
-  height: 5px;
-  margin: 6px;
-  border-radius: 5px;
-  background-color: rgb(10, 50, 110);
-  transition: all 0.3s ease;
-}
-
-.burger div:nth-child(2) {
-  width: 22px;
-}
-
-.nav-active {
-  transform: translateX(0%);
-  box-shadow: 0px -2px 20px rgba(255, 255, 255, 0.2);
-}
-
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-.toggle .line2 {
-  opacity: 0;
-}
-.toggle .line3 {
-  transform: rotate(45deg) translate(-9px, -6px);
-}
+<style src="./Navbar.css">
 </style>
