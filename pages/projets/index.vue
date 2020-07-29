@@ -1,5 +1,5 @@
 <template>
-  <h1>projects page</h1>
+<h1 class="text-6xl">Projets</h1>
 </template>
 
 <script>

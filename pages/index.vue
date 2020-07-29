@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>test</h1>
-    <span>test</span>
+<h1 class="text-6xl">Homepage</h1>
   </div>
 </template>
 

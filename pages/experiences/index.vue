@@ -1,5 +1,6 @@
 <template>
-  <h1>experiences page</h1>
+<h1 class="text-6xl">Experiences</h1>
+
 </template>
 
 <script>
