@@ -9,11 +9,7 @@ export const store = new Vuex.Store({
   }),
   mutations: {
     switchTheme(state) {
-      if (state.theme === "theme-light") {
-        state.theme = "theme-dark";
-      } else {
-        state.theme = "theme-light";
-      }
+      state.theme = state.theme === "theme-light" ? "theme-dark" : "theme-light"
     }
   }
 });
