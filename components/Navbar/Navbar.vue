@@ -10,7 +10,7 @@
           />
         </svg>
       </div>
-      <div class="hidden md:block">
+      <div class="hidden lg:block">
         <nuxt-link class="mx-4" to="/">
           <span class="text-xl">Accueil</span>
         </nuxt-link>
@@ -64,7 +64,7 @@
         </li>
       </ul>
     </div>
-    <div class="burger md:hidden" @click="navSlide">
+    <div class="burger lg:hidden" @click="navSlide">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>

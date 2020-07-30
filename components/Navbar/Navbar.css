@@ -1,7 +1,7 @@
 .logo,
 .logo svg {
   height: 86px;
-  widows: 206px;
+  width: 206px;
 }
 .logo path {
   fill: var(--bg-logo);

@@ -3,12 +3,12 @@
     <h1 class="text-6xl">Homepage</h1>
     <transition duration="500" type="transition" name="fade">
       <div
-        class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
+        class="absolute z-50"
         id="modal_container"
         v-if="toggleModal"
         v-hotkey="keymap"
       >
-        <div class="relative mx-auto w-auto max-x-2xl">
+        <div class="relative mx-auto w-auto">
           <div class="bg-white w-auto mx-auto px-12 pb-6 rounded-lg relative">
             <div class="flex flex-row justify-end">
               <span class="text-red-700 cursor-pointer text-6xl" @click="closeModal">&times;</span>
@@ -24,7 +24,11 @@
         </div>
       </div>
     </transition>
-    <div class="absolute inset-0 z-40 opacity-25 bg-black" v-if="toggleModal"></div>
+    <div
+      class="absolute inset-0 z-40 opacity-25 bg-black"
+      v-if="toggleModal"
+      @click.self="closeModal"
+    ></div>
   </div>
 </template>
 
@@ -61,7 +65,7 @@ export default {
     },
     keymap() {
       return {
-        'esc': {
+        esc: {
           keyup: this.closeModal,
         },
       };
@@ -85,5 +89,10 @@ export default {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+#modal_container{
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>
