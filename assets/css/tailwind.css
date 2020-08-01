@@ -1,3 +1,25 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@responsive {
+  .h-xl {
+    height: 52vh;
+  }
+
+  .h-high{
+    height: 46vh;
+  }
+  
+  .h-med{
+    height: 38vh;
+  }
+  
+  .h-small{
+    height: 32vh;
+  }
+
+  .h-mobile {
+    height: 25vh
+  }
+}
