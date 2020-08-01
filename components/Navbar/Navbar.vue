@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="logo">
+    <div class="flex flex-row justify-between py-4 px-8">
+      <div class="logo mx-auto lg:mx-0">
         <svg>
           <!-- 86x206 -->
           <path
