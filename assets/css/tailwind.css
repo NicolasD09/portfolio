@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+.z-1 {
+  z-index: -1;
+}
+
 @responsive {
   .h-xl {
     height: 55vh;

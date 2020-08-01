@@ -63,7 +63,7 @@
         </div>
       </transition>
     </div>
-    <div class="home__circles bottom-0 left-0 absolute">
+    <div class="home__circles bottom-0 left-0 absolute z-1">
       <img src="~/assets/img/circles_corner.png" alt />
     </div>
   </div>
