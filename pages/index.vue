@@ -66,9 +66,9 @@
       </transition>
     </div>
     <transition name="fade">
-    <div v-if="main_show" class="home__circles bottom-0 left-0 absolute z-1">
-      <img src="~/assets/img/circles_corner.png" alt />
-    </div>
+      <div v-if="main_show" class="home__circles bottom-0 left-0 absolute z-1">
+        <img src="~/assets/img/circles_corner.png" alt />
+      </div>
     </transition>
   </div>
 </template>
@@ -81,7 +81,7 @@ export default {
   data() {
     return {
       image_show: false,
-      main_show: false
+      main_show: false,
     };
   },
   components: {
@@ -91,10 +91,10 @@ export default {
   mounted() {
     setTimeout(() => {
       this.main_show = true;
-    }, 400);
+    }, 200);
     setTimeout(() => {
       this.image_show = true;
-    }, 900);
+    }, 1600);
   },
 };
 </script>
