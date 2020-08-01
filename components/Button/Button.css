@@ -1,0 +1,25 @@
+button.primary,
+button.secondary {
+  padding: .6rem 1.2rem;
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+}
+
+button.primary {
+  background-color: var(--light-blue);
+  color: white;
+}
+
+button.primary:hover{
+  background-color: var(--lighter-blue);
+}
+
+button.secondary {
+  background-color: transparent;
+  border: 2px solid var(--light-blue);
+  color: var(--lighter-blue);
+}
+
+button.secondary:hover{
+  border-color: var(--lighter-blue);
+}
