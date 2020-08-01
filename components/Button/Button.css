@@ -29,5 +29,6 @@ button.secondary:hover {
 }
 
 .home__circles img {
-  height: 60vh;
+  /* height: 60vh; */
+  width: auto;
 }

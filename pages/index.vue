@@ -1,14 +1,14 @@
 <template>
   <div>
     <ConstructionModal />
-    <div class="grid sm:gap-0 gap-8 sm:grid-rows-2 md:grid-cols-2 px-8">
+    <div class="sm:flex sm:flex-col md:grid md:grid-cols-2 md:grid-rows-1 px-8">
       <transition name="fade">
         <div v-if="image_show" class="home__left flex flex-col justify-center">
           <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-regular">
             Pouvoir créer une identité visuelle
             <br />n'a jamais été aussi simple
           </h1>
-          <p class="text-base sm:text-lg md:text-2xl my-4 md:my-8">
+          <p class="text-base md:text-2xl my-4 md:my-8">
             Vous souhaitez développer votre image numérique ? Je propose des
             <br />services de création de sites internet, mais également de logos et visuels
             <br />graphiques.
@@ -20,7 +20,7 @@
         </div>
       </transition>
       <transition type="transition" name="slide-fade">
-        <div class="home__right gap-4 sm:gap-8" v-if="image_show">
+        <div class="home__right mt-8 md:mt-0 gap-4 sm:gap-8" v-if="image_show">
           <img
             class="home__right__image h-mobile lg:h-high md:h-med sm:h-small xl:h-xl"
             src="~/assets/img/programming_illustration.png"
