@@ -1,0 +1,19 @@
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(30%);
+  opacity: 0;
+}
+
+.home__right{
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  justify-items: end;
+  align-items: center;
+}

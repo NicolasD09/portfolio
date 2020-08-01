@@ -1,27 +1,95 @@
 <template>
   <div>
-    <h1 class="text-6xl">Homepage</h1>
-
-
-    <ConstructionModal/>
+    <ConstructionModal />
+    <div class="grid md:grid-cols-2 px-8">
+      <div class="home__left flex flex-col justify-center">
+        <h1 class="text-5xl font-regular">
+          Pouvoir créer une identité visuelle
+          <br />n'a jamais été aussi simple
+        </h1>
+        <p class="text-2xl my-8">
+          Vous souhaitez développer votre image numérique ? Je propose des
+          <br />services de création de sites internet, mais également de logos et visuels
+          <br />graphiques.
+        </p>
+        <div class="home__cta">
+          <Button type="primary" class="mr-8">Voir mon travail</Button>
+          <Button type="secondary">Me contacter</Button>
+        </div>
+      </div>
+      <transition type="transition" name="slide-fade">
+        <div class="home__right gap-8" v-if="image_show">
+          <img
+            class="home__right__image h-mobile lg:h-high md:h-med sm:h-small xl:h-xl"
+            src="~/assets/img/programming_illustration.png"
+            alt="programming_image"
+          />
+          <div class="home__right__quote text-right">
+            <p class="text-4xl">Le design est dans les détails</p>
+            <p class="text-2xl">Paul Bennet</p>
+          </div>
+          <div class="home__right__social">
+            <div class="flex flex-row">
+              <a href="#">
+                <img
+                  class="md:h-12 px-5 home__right__social__img"
+                  src="~/assets/img/twitter.svg"
+                  alt
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="md:h-12 px-5 home__right__social__img"
+                  src="~/assets/img/codepen.svg"
+                  alt
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="md:h-12 px-5 home__right__social__img"
+                  src="~/assets/img/github.svg"
+                  alt
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="md:h-12 px-5 home__right__social__img"
+                  src="~/assets/img/linkedin.svg"
+                  alt
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+    <div class="home__circles bottom-0 left-0 absolute">
+      <img src="~/assets/img/circles_corner.png" alt />
+    </div>
   </div>
 </template>
 
 <script>
-import ConstructionModal from '@/components/ConstructionModal/ConstructionModal'
+import ConstructionModal from "@/components/ConstructionModal/ConstructionModal";
+import Button from "@/components/Button/Button";
 
 export default {
+  data() {
+    return {
+      image_show: false,
+    };
+  },
   components: {
-    ConstructionModal
-  }
+    ConstructionModal,
+    Button,
+  },
+  mounted() {
+    setTimeout(() => {
+      this.image_show = true;
+    }, 1200);
+  },
 };
 </script>
 
-<style scoped>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-
+<style src="./index/Index.css">
 </style>

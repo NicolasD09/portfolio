@@ -4,6 +4,7 @@
 
 .theme-light {
   --bg-color: #f8f8f8;
+  --lighter-blue: #0664c2;
   --light-blue: #0152a2;
   --dark-blue: #000e1c;
   --text-color: #333333;
@@ -14,6 +15,7 @@
 
 .theme-dark {
   --bg-color: #000b15;
+  --lighter-blue: #0664c2;
   --light-blue: #0152a2;
   --dark-blue: #001224;
   --text-color: #f2f2f2;
@@ -29,15 +31,11 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #app{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100vh;
   transition: all .5s;
 }
 
@@ -45,7 +43,7 @@ div.theme-dark {
   background-color: var(--bg-color);
 }
 
-a {
+a, a span {
   color: var(--links-color);
 }
 
@@ -55,6 +53,23 @@ h1,h2,h3,h4,h5,h6,span,p, button {
 
 button:focus{
   outline: none;
+}
+
+/* FONTS */
+.font-light {
+  font-family: 'Montserrat light';
+}
+
+.font-regular {
+  font-family: 'Montserrat regular';
+}
+
+.font-medium {
+  font-family: 'Montserrat medium';
+}
+
+.font-bold {
+  font-family: 'Montserrat bold';
 }
 
 /* Page transitions */

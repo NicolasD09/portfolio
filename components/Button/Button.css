@@ -23,3 +23,7 @@ button.secondary {
 button.secondary:hover{
   border-color: var(--lighter-blue);
 }
+
+.home__circles img {
+  height: 60vh;
+}
