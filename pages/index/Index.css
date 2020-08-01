@@ -11,6 +11,18 @@
   opacity: 0;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .home__right{
   display: grid;
   grid-template-rows: auto 1fr 1fr;

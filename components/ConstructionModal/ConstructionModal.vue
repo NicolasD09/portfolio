@@ -47,7 +47,7 @@ export default {
     if (!this.showed) {
       setTimeout(() => {
         this.toggleModal = true;
-      }, 1000);
+      }, 3000);
     }
     store.commit("showModal");
   },
@@ -73,7 +73,7 @@ export default {
 .fade-leave-active {
   transition-property: all;
   transition-timing-function: ease-in-out;
-  transition-duration: 0.3s;
+  transition-duration: 0.5s;
 }
 .fade-enter,
 .fade-leave-to {
