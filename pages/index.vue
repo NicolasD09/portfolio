@@ -1,61 +1,61 @@
 <template>
   <div>
     <ConstructionModal />
-    <div class="grid md:grid-cols-2 px-8">
+    <div class="grid sm:gap-0 gap-8 sm:grid-rows-2 md:grid-cols-2 px-8">
       <transition name="fade">
         <div v-if="image_show" class="home__left flex flex-col justify-center">
-          <h1 class="text-5xl font-regular">
+          <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-regular">
             Pouvoir créer une identité visuelle
             <br />n'a jamais été aussi simple
           </h1>
-          <p class="text-2xl my-8">
+          <p class="text-base sm:text-lg md:text-2xl my-4 md:my-8">
             Vous souhaitez développer votre image numérique ? Je propose des
             <br />services de création de sites internet, mais également de logos et visuels
             <br />graphiques.
           </p>
           <div class="home__cta">
-            <Button type="primary" class="mr-8" to="/projets">Voir mon travail</Button>
+            <Button type="primary" class="sm:mr-8" to="/projets">Voir mon travail</Button>
             <Button type="secondary" to="/contact">Me contacter</Button>
           </div>
         </div>
       </transition>
       <transition type="transition" name="slide-fade">
-        <div class="home__right gap-8" v-if="image_show">
+        <div class="home__right gap-4 sm:gap-8" v-if="image_show">
           <img
             class="home__right__image h-mobile lg:h-high md:h-med sm:h-small xl:h-xl"
             src="~/assets/img/programming_illustration.png"
             alt="programming_image"
           />
           <div class="home__right__quote text-right">
-            <p class="text-4xl">Le design est dans les détails</p>
-            <p class="text-2xl">Paul Bennet</p>
+            <p class="text-lg md:text-4xl">Le design est dans les détails</p>
+            <p class="text-base md:text-2xl">Paul Bennet</p>
           </div>
           <div class="home__right__social">
             <div class="flex flex-row">
-              <a href="#">
+              <a href="https://twitter.com/NDX_dev" target="_blank">
                 <img
-                  class="md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 px-5 home__right__social__img"
                   src="~/assets/img/twitter.svg"
                   alt
                 />
               </a>
-              <a href="#">
+              <a href="https://codepen.io/NDX_dev" target="_blank">
                 <img
-                  class="md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 px-5 home__right__social__img"
                   src="~/assets/img/codepen.svg"
                   alt
                 />
               </a>
-              <a href="#">
+              <a href="https://github.com/NicolasD09" target="_blank">
                 <img
-                  class="md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 px-5 home__right__social__img"
                   src="~/assets/img/github.svg"
                   alt
                 />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/nicdx-dev/" target="_blank">
                 <img
-                  class="md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 px-5 home__right__social__img"
                   src="~/assets/img/linkedin.svg"
                   alt
                 />

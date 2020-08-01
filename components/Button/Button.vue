@@ -1,10 +1,12 @@
 <template>
   <div class="inline-block">
-      <nuxt-link v-if="to" :to="to">
-        <button :class="type">
+    <nuxt-link v-if="to" :to="to">
+      <button :class="type" class="p-2">
+        <span class="text-base">
           <slot></slot>
-        </button>
-      </nuxt-link>
+        </span>
+      </button>
+    </nuxt-link>
     <button v-else :class="type">
       <slot></slot>
     </button>

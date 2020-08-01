@@ -23,18 +23,10 @@
   margin-top: 130px;
 }
 
-
-.burger {
-  cursor: pointer;
-  position: absolute;
-  right: 1.3em;
-  top: 75px
-}
-
 .burger div {
-  width: 30px;
-  height: 5px;
-  margin: 6px;
+  width: 35px;
+  height: 4px;
+  margin: 3px;
   border-radius: 5px;
   background-color: rgb(10, 50, 110);
   transition: all 0.3s ease;
@@ -43,6 +35,9 @@
 .burger div:nth-child(2) {
   width: 22px;
 }
+.burger div:nth-child(1) {
+  margin-top: 0;
+}
 
 .nav-active {
   transform: translateX(0%);
@@ -50,12 +45,16 @@
   background-color: #fff;
 }
 
+.burger.toggle {
+  background-color: transparent;
+}
+
 .toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 10px);
+  transform: rotate(-45deg) translate(-11px,3px);
 }
 .toggle .line2 {
   opacity: 0;
 }
 .toggle .line3 {
-  transform: rotate(45deg) translate(-5px, -10px);
+  transform: rotate(45deg) translate(-11px, -3px);
 }

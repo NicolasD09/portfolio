@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between py-4 px-8">
-      <div class="logo mx-auto lg:mx-0">
+    <div class="flex flex-row justify-between items-center lg:items-start py-4 md:px-8 sm:px-4 px-2">
+      <div class="logo lg:mx-0">
         <svg>
           <!-- 86x206 -->
           <path
@@ -32,7 +32,14 @@
         </nuxt-link>
       </div>
       <ThemeSwitch />
-
+      <div
+        class="burger cursor-pointer mt-2 lg:hidden flex flex-col items-end h-auto"
+        @click="navSlide"
+      >
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </div>
 
     <div class="flex flex-col navbar">
@@ -63,11 +70,6 @@
           </nuxt-link>
         </li>
       </ul>
-    </div>
-    <div class="burger lg:hidden" @click="navSlide">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
     </div>
   </div>
 </template>
