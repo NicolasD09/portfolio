@@ -65,11 +65,11 @@
         </div>
       </transition>
     </div>
-    <transition name="fade">
-      <div v-if="main_show" class="home__circles bottom-0 left-0 absolute z-1">
-        <img src="~/assets/img/circles_corner.png" alt />
-      </div>
-    </transition>
+    <!-- <transition name="fade"> -->
+    <div v-if="main_show" class="home__circles bottom-0 left-0 fixed z-1">
+      <img src="~/assets/img/circles_corner.png" alt />
+    </div>
+    <!-- </transition> -->
   </div>
 </template>
 
