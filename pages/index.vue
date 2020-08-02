@@ -32,30 +32,30 @@
           </div>
           <div class="home__right__social">
             <div class="flex flex-row">
-              <a href="https://twitter.com/NDX_dev" target="_blank">
+              <a class="mx-5" href="https://twitter.com/NDX_dev" target="_blank">
                 <img
-                  class="h-8 md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 home__right__social__img"
                   src="~/assets/img/twitter.svg"
                   alt
                 />
               </a>
-              <a href="https://codepen.io/NDX_dev" target="_blank">
+              <a class="mx-5" href="https://codepen.io/NDX_dev" target="_blank">
                 <img
-                  class="h-8 md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 home__right__social__img"
                   src="~/assets/img/codepen.svg"
                   alt
                 />
               </a>
-              <a href="https://github.com/NicolasD09" target="_blank">
+              <a class="mx-5" href="https://github.com/NicolasD09" target="_blank">
                 <img
-                  class="h-8 md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 home__right__social__img"
                   src="~/assets/img/github.svg"
                   alt
                 />
               </a>
-              <a href="https://www.linkedin.com/in/nicdx-dev/" target="_blank">
+              <a class="mx-5" href="https://www.linkedin.com/in/nicdx-dev/" target="_blank">
                 <img
-                  class="h-8 md:h-12 px-5 home__right__social__img"
+                  class="h-8 md:h-12 home__right__social__img"
                   src="~/assets/img/linkedin.svg"
                   alt
                 />

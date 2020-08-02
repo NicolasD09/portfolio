@@ -29,3 +29,8 @@
   justify-items: end;
   align-items: center;
 }
+
+.home__right__social div a:hover {
+  transform: translateY(-3px);
+  filter:drop-shadow(0 8px 15px rgba(0, 0, 0, 0.6));
+}
