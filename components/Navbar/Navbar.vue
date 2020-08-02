@@ -11,23 +11,23 @@
         </svg>
       </div>
       <div class="hidden lg:block">
-        <nuxt-link class="mx-4" to="/">
+        <nuxt-link class="xl:mx-10 lg:mx-6" to="/">
           <span class="text-xl">Accueil</span>
         </nuxt-link>
 
-        <nuxt-link class="mx-4" to="/projets">
+        <nuxt-link class="xl:mx-10 lg:mx-6" to="/projets">
           <span class="text-xl">Projets</span>
         </nuxt-link>
 
-        <nuxt-link class="mx-4" to="/experiences">
+        <nuxt-link class="xl:mx-10 lg:mx-6" to="/experiences">
           <span class="text-xl">Expériences</span>
         </nuxt-link>
 
-        <nuxt-link class="mx-4" to="/about">
+        <nuxt-link class="xl:mx-10 lg:mx-6" to="/about">
           <span class="text-xl">A propos</span>
         </nuxt-link>
 
-        <nuxt-link class="mx-4" to="/contact">
+        <nuxt-link class="xl:mx-10 lg:mx-6" to="/contact">
           <span class="text-xl">Contact</span>
         </nuxt-link>
       </div>
