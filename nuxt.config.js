@@ -1,4 +1,3 @@
-
 export default {
   /*
    ** Nuxt rendering mode
@@ -33,10 +32,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    "assets/fonts/montserrat.css",
-    "assets/css/global.css"
-  ],
+  css: ["assets/fonts/montserrat.css", "assets/css/global.css"],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -59,8 +55,20 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/apollo"
   ],
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.VUE_APOLLO_ENDPOINT,
+        httpLinkOptions: {
+          credentials: "same-origin"
+        }
+      },
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
