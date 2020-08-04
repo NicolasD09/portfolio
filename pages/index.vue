@@ -66,7 +66,7 @@
       </transition>
     </div>
     <transition name="fade">
-      <div v-if="main_show" class="home__circles bottom-0 left-0 fixed z-1">
+      <div v-if="main_show" class="home__circles bottom-0 left-0 fixed">
         <img src="~/assets/img/circles_corner.png" alt />
       </div>
     </transition>
