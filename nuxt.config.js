@@ -64,9 +64,17 @@ export default {
       default: {
         httpEndpoint: process.env.VUE_APOLLO_ENDPOINT,
         httpLinkOptions: {
+          headers: {
+            "Access-Control-Request-Method": "GET"
+          },
+          fetchOptions: {
+            mode: "cors"
+          },
           credentials: "same-origin"
-        }
-      },
+        },
+        ssr: true,
+        fetchPolicy: 'no-cache'
+      }
     }
   },
   /*

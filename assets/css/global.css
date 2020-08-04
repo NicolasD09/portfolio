@@ -34,42 +34,51 @@ html {
   overflow-x: hidden;
 }
 
-#app{
+#app {
   height: 100vh;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 div.theme-dark {
   background-color: var(--bg-color);
 }
 
-a, a span {
+a,
+a span,
+button {
   color: var(--links-color);
 }
 
-h1,h2,h3,h4,h5,h6,span,p, button {
-  color: var(--text-color)
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  color: var(--text-color);
 }
 
-button:focus{
+button:focus {
   outline: none;
 }
 
 /* FONTS */
 .font-light {
-  font-family: 'Montserrat light';
+  font-family: "Montserrat light";
 }
 
 .font-regular {
-  font-family: 'Montserrat regular';
+  font-family: "Montserrat regular";
 }
 
 .font-medium {
-  font-family: 'Montserrat medium';
+  font-family: "Montserrat medium";
 }
 
 .font-bold {
-  font-family: 'Montserrat bold';
+  font-family: "Montserrat bold";
 }
 
 /* Page transitions */
