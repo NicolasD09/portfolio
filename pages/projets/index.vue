@@ -1,17 +1,14 @@
 <template>
   <div class="page__container">
     <div class="w-2/12 flex flex-row justify-between mx-auto mt-8 mb-12">
-      <button @click="toggleActive" data-filter="web" class="button text-2xl active">Web</button>
-      <button @click="toggleActive" data-filter="design" class="button text-2xl">Design</button>
-      <button @click="toggleActive" data-filter="logo" class="button text-2xl">Logos</button>
+      <a @click="toggleActive" data-filter="web" class="button text-2xl active cursor-pointer">Web</a>
+      <a @click="toggleActive" data-filter="design" class="button text-2xl cursor-pointer">Design</a>
+      <a @click="toggleActive" data-filter="logo" class="button text-2xl cursor-pointer">Logos</a>
     </div>
     <div class="projects__container w-6/12 mx-auto my-auto overflow-y-auto overflow-x-hidden">
-      <template>
-        <div></div>
-      </template>
       <div v-if="allProject && (allProject.length > 0)">
-        <transition name="project-fade">
-          <div class="mx-auto mb-8" v-for="project in allProject" :key="project._id">
+        <transition-group tag="div" name="project-fade">
+          <div class="mx-auto mb-8 mr-6" v-for="project in allProject" :key="project._id">
             <div
               class="grid grid-cols-2 grid-rows-1 gap-8 items-center border-b-2 border-gray-500 border-opacity-50 p-4"
             >
@@ -36,7 +33,7 @@
               </a>
             </div>
           </div>
-        </transition>
+        </transition-group>
       </div>
       <p v-else class="text-xl">Il n'y a pas encore de projets dans cette catégorie.</p>
     </div>
@@ -92,13 +89,14 @@ export default {
   },
   methods: {
     toggleActive(e) {
-      let buttons = document.querySelectorAll("button.button");
+      let buttons = document.querySelectorAll("a.button");
       buttons.forEach((btn) => btn.classList.remove("active"));
-
-      e.target.classList.toggle("active");
+      if (!e.target.classList.contains("active")) {
+        e.target.classList.add("active");
+      }
       this.filter = e.target.dataset.filter;
     },
-  }
+  },
 };
 </script>
 <style src="./Projets.css">

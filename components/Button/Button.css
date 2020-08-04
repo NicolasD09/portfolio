@@ -12,6 +12,11 @@ button.primary span {
   color: white;
 }
 
+button.primary:hover,
+button.secondary:hover{
+  transform: translateY(-1px)
+}
+
 button.primary:hover {
   background-color: var(--lighter-blue);
 }
