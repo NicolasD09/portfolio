@@ -9,7 +9,7 @@
       <template>
         <div></div>
       </template>
-      <div v-if="allProject.length > 0">
+      <div v-if="allProject && (allProject.length > 0)">
         <transition name="project-fade">
           <div class="mx-auto mb-8" v-for="project in allProject" :key="project._id">
             <div
@@ -97,7 +97,6 @@ export default {
 
       e.target.classList.toggle("active");
       this.filter = e.target.dataset.filter;
-      console.log(this.allProject);
     },
   }
 };

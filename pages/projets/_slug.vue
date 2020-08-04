@@ -18,7 +18,7 @@ export default {
           allProject(where: { slug: { eq: $slug } }) {
             title
             _id
-            long_description
+            long_descriptionRaw
             image {
               asset {
                 url
