@@ -94,7 +94,7 @@ export default {
     }, 200);
     setTimeout(() => {
       this.image_show = true;
-    }, 1600);
+    }, 1000);
   },
 };
 </script>
