@@ -1,7 +1,7 @@
 <template>
   <div>
     <ConstructionModal />
-    <div class="sm:flex sm:flex-col md:grid md:grid-cols-2 md:grid-rows-1 px-8">
+    <div class="sm:flex sm:flex-col md:grid md:grid-cols-2 md:grid-rows-1 px-8 z-10">
       <transition name="fade">
         <div v-if="image_show" class="home__left flex flex-col justify-center">
           <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-regular">

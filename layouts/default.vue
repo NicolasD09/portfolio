@@ -11,18 +11,21 @@ import { store } from "@/store/index.js";
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   components: {
-    Navbar
+    Navbar,
   },
   computed: {
     theme: {
-      get: function() {
-        return store.state.theme
-      }
-    }
+      get: function () {
+        return store.state.theme;
+      },
+    },
+  },
+  Mounted() {
+    if (window.matchMedia("(prefers-color-scheme)").media !== 'not all')
+      store.commit("switchTheme");
   },
 };
 </script>
