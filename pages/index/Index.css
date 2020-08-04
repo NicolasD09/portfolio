@@ -35,6 +35,3 @@
   filter:drop-shadow(0 8px 15px rgba(0, 0, 0, 0.6));
 }
 
-.home__circles {
-  z-index: -1;
-}

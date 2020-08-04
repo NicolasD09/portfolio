@@ -1,9 +1,9 @@
 <template>
   <div>
     <ConstructionModal />
-    <div class="sm:flex sm:flex-col md:grid md:grid-cols-2 md:grid-rows-1 px-8 z-10">
+    <div class="sm:flex sm:flex-col md:grid md:grid-cols-2 md:grid-rows-1 px-8 ">
       <transition name="fade">
-        <div v-if="image_show" class="home__left flex flex-col justify-center">
+        <div v-if="image_show" class="home__left flex flex-col justify-center z-10">
           <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-regular">
             Pouvoir créer une identité visuelle
             <br />n'a jamais été aussi simple
@@ -20,7 +20,7 @@
         </div>
       </transition>
       <transition type="transition" name="slide-fade">
-        <div class="home__right mt-8 md:mt-0 gap-4 sm:gap-8" v-if="image_show">
+        <div class="home__right mt-8 md:mt-0 gap-4 sm:gap-8 z-10" v-if="image_show">
           <img
             class="home__right__image h-mobile lg:h-high md:h-med sm:h-small xl:h-xl"
             src="~/assets/img/programming_illustration.png"

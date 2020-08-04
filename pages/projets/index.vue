@@ -13,7 +13,7 @@
         <transition name="project-fade">
           <div class="mx-auto mb-8" v-for="project in allProject" :key="project._id">
             <div
-              class="grid grid-cols-2 grid-rows-1 gap-8 items-center border-b-2 border-gray-300 p-4"
+              class="grid grid-cols-2 grid-rows-1 gap-8 items-center border-b-2 border-gray-500 border-opacity-50 p-4"
             >
               <div class="flex flex-col justify-between">
                 <h3 class="text-3xl">{{ project.title }}</h3>
