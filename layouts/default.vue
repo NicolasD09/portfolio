@@ -23,9 +23,15 @@ export default {
       },
     },
   },
-  Mounted() {
-    if (window.matchMedia("(prefers-color-scheme)").media !== 'not all')
+  mounted() {
+    const userPrefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (userPrefersDark) {
       store.commit("switchTheme");
+    }
+
   },
 };
 </script>
