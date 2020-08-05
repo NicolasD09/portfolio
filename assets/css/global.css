@@ -40,7 +40,8 @@ html {
   z-index: -2;
 }
 
-div.theme-dark {
+div.theme-dark,
+#modal_container {
   background-color: var(--bg-color);
 }
 
