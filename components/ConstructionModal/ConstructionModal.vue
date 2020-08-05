@@ -1,9 +1,9 @@
 <template>
   <div>
     <transition type="transition" name="fade">
-      <div class="absolute z-50 sm:w-8/12 md:w-5/12 lg:w-4/12" id="modal_container" v-if="toggleModal" v-hotkey="keymap">
+      <div class="absolute z-50 sm:w-8/12 md:w-5/12 lg:w-4/12 rounded-lg" id="modal_container" v-if="toggleModal" v-hotkey="keymap">
         <div class="relative mx-auto w-auto">
-          <div class="bg-white w-auto mx-auto px-4 sm:px-8 md:px-12 pb-6 rounded-lg relative">
+          <div class="w-auto mx-auto px-4 sm:px-8 md:px-12 pb-6 relative">
             <div class="flex flex-row justify-end">
               <span class="text-red-700 cursor-pointer text-6xl" @click="closeModal">&times;</span>
             </div>
