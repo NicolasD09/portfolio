@@ -11,6 +11,7 @@
   --social-icons: #000e1c;
   --bg-logo: #000e1c;
   --links-color: #0152a2;
+  --light-grey: #cdcdcd;
 }
 
 .theme-dark {
@@ -22,6 +23,7 @@
   --social-icons: #0152a2;
   --bg-logo: #f4f4f4;
   --links-color: #f4f4f4;
+  --light-grey: #cdcdcd;
 }
 
 html {
@@ -32,6 +34,25 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--light-blue) var(--light-grey);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--light-grey);
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--light-blue);
+  border-radius: 6px;
 }
 
 #app {
