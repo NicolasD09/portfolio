@@ -51,8 +51,8 @@
 </template>
 
 <script>
-import gql from "graphql-tag";
 import Button from "@/components/Button/Button";
+import {getAllProjects} from '@/queries/queries.js'
 
 export default {
   data() {
@@ -63,23 +63,7 @@ export default {
   apollo: {
     allProject: {
       prefetch: true,
-      query: gql`
-        query getAllProjects($filter: String!) {
-          allProject(where: { project_type: { eq: $filter } }) {
-            _id
-            title
-            slug
-            link
-            short_descriptionRaw
-            alt_text
-            thumbnail {
-              asset {
-                url
-              }
-            }
-          }
-        }
-      `,
+      query: getAllProjects,
       variables() {
         return {
           filter: this.filter,
