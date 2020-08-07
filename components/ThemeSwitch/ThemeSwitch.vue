@@ -17,7 +17,7 @@ export default {
     computed: {
     theme: {
       get: function() {
-        return store.state.theme
+        return store.state.theme 
       }
     }
   },

@@ -31,8 +31,7 @@ export default {
     if (userPrefersDark) {
       store.commit("switchTheme");
     }
-
-  },
+  }
 };
 </script>
 
