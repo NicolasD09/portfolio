@@ -71,7 +71,7 @@ a.nuxt-link-exact-active {
 
 a.nav-link:hover {
   transform: translateY(-1px);
-  border-bottom: 3px solid var(--light-blue);
+  border-bottom: 3px solid var(--links-color);
   font-weight: 700;
   transition: all 0.2s ease-in-out;
   padding-bottom: 5px;
