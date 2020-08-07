@@ -7,7 +7,6 @@
   fill: var(--bg-logo);
 }
 
-
 .navbar {
   position: absolute;
   right: 0;
@@ -25,11 +24,11 @@
 
 .burger div {
   width: 35px;
-  height: 4px;
-  margin: 3px;
+  height: 2px;
+  margin: 4px;
   border-radius: 5px;
-  background-color: rgb(10, 50, 110);
-  transition: all 0.3s ease;
+  background-color: var(--text-color);
+  transition: all .3s ease;
 }
 
 .burger div:nth-child(2) {
@@ -41,8 +40,9 @@
 
 .nav-active {
   transform: translateX(0%);
-  box-shadow: -3px 0 15px rgba(0,0,0, 0.3);
-  background-color: #fff;
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--bg-color);
+  z-index: 999;
 }
 
 .burger.toggle {
@@ -58,6 +58,10 @@
 .toggle .line3 {
   transform: rotate(45deg) translate(-11px, -3px);
 }
+
+
+
+
 
 /* Navlinks transitions */
 a.nuxt-link-exact-active {
