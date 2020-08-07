@@ -58,3 +58,21 @@
 .toggle .line3 {
   transform: rotate(45deg) translate(-11px, -3px);
 }
+
+/* Navlinks transitions */
+a.nuxt-link-exact-active {
+  font-weight: bold;
+  transition: 0.3s;
+  border-bottom: 3px solid var(--links-color);
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  padding-bottom: 5px;
+}
+
+a.nav-link:hover {
+  transform: translateY(-1px);
+  border-bottom: 3px solid var(--light-blue);
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 5px;
+}
