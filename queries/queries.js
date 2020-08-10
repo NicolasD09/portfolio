@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-const getAllProjects = gql`
+export const getAllProjects = gql`
 query getAllProjects($filter: String!) {
   allProject(where: { project_type: { eq: $filter } }) {
     _id
@@ -18,6 +18,17 @@ query getAllProjects($filter: String!) {
 }
 `
 
-
-
-export {getAllProjects}
+export const getProject = gql`
+  query getProject($slug: String!) {
+    allProject(where: { slug: { eq: $slug } }) {
+      title
+      _id
+      long_descriptionRaw
+      image {
+        asset {
+          url
+        }
+      }
+    }
+  }
+`

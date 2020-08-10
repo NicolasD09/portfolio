@@ -69,3 +69,7 @@ a.button:hover {
   opacity: 0;
   transform: translateY(30px)
 }
+
+.projects__project {
+  border-left: 5px solid rgba(1, 82, 162,0.5);
+}

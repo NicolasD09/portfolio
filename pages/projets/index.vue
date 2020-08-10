@@ -5,13 +5,11 @@
       <a @click="toggleActive" data-filter="design" class="button text-2xl cursor-pointer">Design</a>
       <a @click="toggleActive" data-filter="logo" class="button text-2xl cursor-pointer">Logos</a>
     </div>
-    <div class="projects__container w-6/12 mx-auto my-auto overflow-y-auto overflow-x-hidden">
+    <div class="projects__container w-7/12 mx-auto my-auto overflow-y-auto overflow-x-hidden">
       <div v-if="allProject && (allProject.length > 0)">
         <transition-group tag="div" name="project-fade">
-          <div class="mx-auto mb-8 mr-6" v-for="project in allProject" :key="project._id">
-            <div
-              class="grid grid-cols-2 grid-rows-1 gap-8 items-center border-b-2 border-gray-500 border-opacity-50 p-4"
-            >
+          <div class="mx-auto mr-6" v-for="project in allProject" :key="project._id">
+            <div class="projects__project grid grid-cols-2 grid-rows-1 gap-8 items-center p-4 pt-0">
               <div class="flex flex-col justify-between">
                 <h3 class="text-3xl">{{ project.title }}</h3>
                 <div
@@ -32,6 +30,7 @@
                 />
               </a>
             </div>
+            <hr class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2" />
           </div>
         </transition-group>
       </div>
@@ -52,7 +51,7 @@
 
 <script>
 import Button from "@/components/Button/Button";
-import {getAllProjects} from '@/queries/queries.js'
+import { getAllProjects } from "@/queries/queries.js";
 
 export default {
   data() {
