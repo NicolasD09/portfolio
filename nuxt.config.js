@@ -32,7 +32,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["assets/fonts/montserrat.css", "assets/css/global.css"],
+  css: ["static/fonts/montserrat.css", "assets/css/global.css"],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

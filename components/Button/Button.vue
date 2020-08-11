@@ -7,7 +7,7 @@
         </span>
       </button>
     </nuxt-link>
-    <button v-else :class="type">
+    <button v-else :class="type" class="p-2">
       <slot></slot>
     </button>
   </div>

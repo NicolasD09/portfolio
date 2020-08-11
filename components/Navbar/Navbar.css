@@ -29,6 +29,7 @@
   border-radius: 5px;
   background-color: var(--text-color);
   transition: all .3s ease;
+  z-index: 11;
 }
 
 .burger div:nth-child(2) {
@@ -42,7 +43,7 @@
   transform: translateX(0%);
   box-shadow: -3px 0 15px rgba(0, 0, 0, 0.3);
   background-color: var(--bg-color);
-  z-index: 999;
+  z-index: 10;
 }
 
 .burger.toggle {

@@ -82,5 +82,81 @@ export default {
   },
 };
 </script>
-<style src="./Projets.css">
+<style scoped>
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+.projects__img__bottom {
+  animation: spin 80s linear infinite;
+  transform-origin: center;
+  position: fixed;
+  left: -13%;
+  bottom: -20%;
+  height: 70%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.projects__container {
+  height: 70vh;
+}
+
+.projects__img__right {
+  height: 90%;
+  position: fixed;
+  right: 0;
+  bottom: 1.2em;
+}
+
+.projects__project__img {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  transition-duration: .2s;
+}
+.projects__project__img:hover {
+  transform: scale(1.05);
+}
+
+
+a.button.active {
+  border-bottom: 3px solid var(--light-blue);
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+a.button:hover {
+  transform: translateY(-1px);
+  border-bottom: 3px solid var(--light-blue);
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.project-fade-enter-active,
+.project-fade-leave-active {
+  transition-property: all;
+  transition-timing-function: ease-out;
+  transition-duration: .5s;
+}
+
+.project-fade-enter-active {
+  transition-delay: .5s;
+}
+
+.project-fade-enter,
+.project-fade-leave-to {
+  opacity: 0;
+  transform: translateY(30px)
+}
+
+.projects__project {
+  border-left: 5px solid rgba(1, 82, 162,0.5);
+}
+
 </style>

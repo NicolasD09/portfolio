@@ -23,7 +23,10 @@ export const getProject = gql`
     allProject(where: { slug: { eq: $slug } }) {
       title
       _id
+      alt_text
+      link
       long_descriptionRaw
+      technologies
       image {
         asset {
           url
