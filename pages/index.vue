@@ -101,6 +101,12 @@ export default {
 </script>
 
 <style scoped>
+*{
+  z-index: 10;
+}
+.home__circles{
+  z-index: 0;
+}
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition-property: all;
