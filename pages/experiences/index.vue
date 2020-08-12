@@ -9,7 +9,7 @@
             <span class="underline">{{exp.company}}</span>
           </h2>
           <block-content :blocks="exp.job_descriptionRaw" />
-          <p class="mt-4">
+          <p class="mt-4 underline">
             <span class="font-medium">{{exp.job_type}}</span>
             ~
             {{exp.city}}
