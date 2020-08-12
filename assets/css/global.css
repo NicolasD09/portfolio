@@ -15,10 +15,10 @@
   --lighter-blue: #0664c2;
   --light-blue: #0152a2;
   --dark-blue: #001224;
-  --text-color: #f2f2f2;
+  --text-color: #e6e6e6;
   --social-icons: #0152a2;
-  --bg-logo: #f4f4f4;
-  --links-color: #f4f4f4;
+  --bg-logo: #e6e6e6;
+  --links-color: #e6e6e6;
   --light-grey: #cdcdcd;
 }
 
@@ -75,6 +75,16 @@ button {
 
 button:focus {
   outline: none;
+}
+
+ul {
+  list-style: inside;
+  list-style-type: " > ";
+  padding-left: 1em;
+}
+
+li::marker {
+  font-size: 1.1rem;
 }
 
 /* FONTS */
