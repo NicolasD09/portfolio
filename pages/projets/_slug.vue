@@ -4,23 +4,29 @@
       <div v-for="(project) in allProject" :key="project._id" class="p-8">
         <h1 class="text-2xl lg:text-4xl font-medium">{{project.title}}</h1>
         <hr class="border-gray-500 border-opacity-50 my-6 w-1/2" />
-        <block-content :blocks="project.long_descriptionRaw" />
+        <div v-if="project.long_descriptionRaw">
+          <block-content :blocks="project.long_descriptionRaw" />
+        </div>
+        <p v-else>Pas de description pour l'instant</p>
         <hr class="border-gray-500 border-opacity-50 my-6 w-1/2" />
         <h3 class="text-xl md:text-2xl font-medium">Technologies :</h3>
-        <ul>
-          <li v-for="(technology,index) in project.technologies" :key="index">{{technology}}</li>
-        </ul>
+        <div v-if="project.technologies">
+          <ul>
+            <li v-for="(technology,index) in project.technologies" :key="index">{{technology}}</li>
+          </ul>
+        </div>
+        <p v-else>Pas de technologies associées</p>
         <div class="flex flex-col sm:flex-row">
-          <Button class="mt-12" type="primary">
+          <Button v-if="project.link" class="mt-12 sm:mr-8" type="primary">
             <a :href="project.link" target="_blank">
               <span>Visiter le site</span>
             </a>
           </Button>
-          <Button class="mt-4 sm:mt-12 sm:ml-8" type="secondary" to="/projets">Retourner aux projets</Button>
+          <Button class="mt-4 sm:mt-12" type="secondary" to="/projets">Retourner aux projets</Button>
         </div>
       </div>
       <div class="flex flex-row justify-center">
-        <div class="overflow-y-auto flex flex-row justify-center">
+        <div v-if="allProject[0].image" class="overflow-y-auto flex flex-row justify-center">
           <div class="project__image__container pr-4">
             <img class="mx-auto" :src="allProject[0].image.asset.url" :alt="allProject[0].alt_text" />
           </div>
