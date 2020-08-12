@@ -1,17 +1,35 @@
 <template>
   <div class="page__container">
-    <div class="w-2/12 flex flex-row justify-between mx-auto mt-8 mb-12">
-      <a @click="toggleActive" data-filter="web" class="button text-2xl active cursor-pointer">Web</a>
-      <a @click="toggleActive" data-filter="design" class="button text-2xl cursor-pointer">Design</a>
-      <a @click="toggleActive" data-filter="logo" class="button text-2xl cursor-pointer">Logos</a>
+    <div
+      class="w-8/12 sm:w-4/12 md:w-5/12 lg:w-4/12 xl:w-2/12 flex flex-row justify-between mx-auto mt-8 mb-12 filter__links"
+    >
+      <a
+        @click="toggleActive"
+        data-filter="web"
+        class="button text-lg sm:text-2xl active cursor-pointer"
+      >Web</a>
+      <a
+        @click="toggleActive"
+        data-filter="design"
+        class="button text-lg sm:text-2xl cursor-pointer"
+      >Design</a>
+      <a
+        @click="toggleActive"
+        data-filter="logo"
+        class="button text-lg sm:text-2xl cursor-pointer"
+      >Logos</a>
     </div>
-    <div class="projects__container w-7/12 mx-auto my-auto overflow-y-auto overflow-x-hidden">
+    <div
+      class="projects__container w-10/12 lg:w-9/12 xl:w-7/12 mx-auto my-auto overflow-y-auto overflow-x-hidden"
+    >
       <div v-if="allProject && (allProject.length > 0)">
         <transition-group tag="div" name="project-fade">
           <div class="mx-auto mr-6" v-for="project in allProject" :key="project._id">
-            <div class="projects__project grid grid-cols-2 grid-rows-1 gap-8 items-start p-2 pl-4 ">
-              <div class="flex flex-col ">
-                <h3 class="text-3xl">{{ project.title }}</h3>
+            <div
+              class="projects__project flex flex-col items-start lg:grid lg:grid-cols-2 lg:grid-rows-1 gap-8 p-2 pl-4"
+            >
+              <div class="flex flex-col">
+                <h3 class="font-medium text-xl lg:text-2xl mb-4">{{ project.title }}</h3>
                 <div
                   class="my-1"
                   v-for="paragraph in project.short_descriptionRaw"
@@ -43,13 +61,13 @@
       <p v-else class="text-xl">Il n'y a pas encore de projets dans cette catégorie.</p>
     </div>
     <div>
-      <img src="~/assets/img/atom.png" alt="atom image" class="projects__img__bottom" />
+      <img src="~/assets/img/atom.png" alt="atom image" class="hidden sm:block projects__img__bottom" />
     </div>
     <div>
       <img
         src="~/assets/img/curves_right.png"
         alt="curves right"
-        class="projects__img__right absolute bottom-0 right-0"
+        class="hidden sm:block projects__img__right absolute bottom-0 right-0"
       />
     </div>
   </div>
@@ -93,13 +111,18 @@ body {
   overflow: hidden;
   height: 100vh;
 }
+.filter__links {
+  position: relative;
+  z-index: 10;
+}
 .projects__img__bottom {
   animation: spin 80s linear infinite;
   transform-origin: center;
   position: fixed;
-  left: -13%;
-  bottom: -20%;
-  height: 70%;
+  left: -5vw;
+  bottom: -3vw;
+  width: 30vw;
+  z-index: 0;
 }
 
 @keyframes spin {
@@ -113,13 +136,16 @@ body {
 
 .projects__container {
   height: 70vh;
+  z-index: 10;
+  position: relative;
 }
 
 .projects__img__right {
-  height: 90%;
+  width: clamp(150px, 11vw, 11vw);
   position: fixed;
   right: 0;
   bottom: 1.2em;
+  z-index: 0;
 }
 
 .projects__project__img {
