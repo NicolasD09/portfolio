@@ -37,7 +37,7 @@ export const getProject = gql`
 `;
 export const getExperiences = gql`
   query getExperience {
-    allExperience(sort: [{ date_fin: DESC }]) {
+    allExperience(sort: [{ annee_fin: DESC }]) {
       title
       _id
       date_debut
@@ -47,6 +47,20 @@ export const getExperiences = gql`
       duree
       city
       company
+    }
+  }
+`;
+
+export const getDiplomas = gql`
+  query getDiplomas {
+    allDiploma(sort: [{ annee_fin: DESC }]) {
+      _id
+      title
+      descriptionRaw
+      date_debut
+      date_fin
+      school
+      city
     }
   }
 `;

@@ -1,8 +1,11 @@
 <template>
-  <div class="page__container">
-    <div class="exp__container w-9/12 xl:w-6/12 mx-auto overflow-y-auto overflow-x-hidden">
+  <div
+    class="page__container flex flex-col items-start lg:grid lg:grid-cols-2 lg:grid-rows-1 gap-20 p-8 w-11/12 mx-auto"
+  >
+    <div class="exp__container overflow-y-auto overflow-x-hidden">
+      <h1 class="text-4xl mb-8 underline text-center">Expériences</h1>
       <div v-if="allExperience && (allExperience.length > 0)">
-        <div v-for="(exp) in allExperience" :key="exp._id" class="px-8">
+        <div v-for="(exp) in allExperience" :key="exp._id" class="sm:px-8">
           <p class>{{exp.date_debut}} à {{exp.date_fin}} ~ {{exp.duree}}</p>
           <h2 class="text-lg sm:text-2xl font-medium my-3">
             {{exp.title}} ~
@@ -18,13 +21,30 @@
         </div>
       </div>
     </div>
-    <img src="~/assets/img/pill.png" alt="background image" class="exp__image">
+    <div class="hidden lg:block border-gray-500 border-l-2 border-opacity-50 middle__border"></div>
+    <div class="diplomas__container overflow-y-auto overflow-x-hidden">
+      <h1 class="text-4xl mb-8 underline text-center">Diplômes</h1>
+      <div v-if="allDiploma && (allDiploma.length > 0)">
+        <div v-for="(diploma) in allDiploma" :key="diploma._id" class="sm:px-8">
+          <p class>{{diploma.date_debut}} à {{diploma.date_fin}}</p>
+          <h2 class="text-lg sm:text-2xl font-medium my-3">{{diploma.title}}</h2>
+          <block-content :blocks="diploma.descriptionRaw" />
+          <p class="mt-4 underline">
+            <span class="font-medium">{{diploma.school}}</span>
+            ~
+            {{diploma.city}}
+          </p>
+          <hr class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2" />
+        </div>
+      </div>
+    </div>
+    <img src="~/assets/img/pill.png" alt="background image" class="exp__image" />
   </div>
 </template>
 
 <script>
 import Button from "@/components/Button/Button";
-import { getExperiences } from "@/queries/queries.js";
+import { getExperiences, getDiplomas } from "@/queries/queries.js";
 import Vue from "vue";
 import BlockContent from "sanity-blocks-vue-component";
 Vue.component("block-content", BlockContent);
@@ -36,25 +56,30 @@ export default {
       prefetch: true,
       query: getExperiences,
     },
+    allDiploma: {
+      prefetch: true,
+      query: getDiplomas,
+    },
   },
 };
 </script>
 
 <style scoped>
-
-.exp__container {
-  height: 80vh;
+* {
   z-index: 5;
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%,-50%);
 }
-.exp__image{
+
+.exp__image {
   position: fixed;
   left: -20%;
-  bottom: calc(-30vw*1.2);
+  bottom: calc(-30vw * 1.2);
   z-index: 0;
-  opacity: .5;
+  opacity: 0.5;
+}
+
+.middle__border{
+  position: absolute;
+  left: 50%;
+  height: 100%;
 }
 </style>
