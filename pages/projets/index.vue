@@ -9,8 +9,8 @@
       <div v-if="allProject && (allProject.length > 0)">
         <transition-group tag="div" name="project-fade">
           <div class="mx-auto mr-6" v-for="project in allProject" :key="project._id">
-            <div class="projects__project grid grid-cols-2 grid-rows-1 gap-8 items-center p-4 pt-0">
-              <div class="flex flex-col justify-between">
+            <div class="projects__project grid grid-cols-2 grid-rows-1 gap-8 items-start p-2 pl-4 ">
+              <div class="flex flex-col ">
                 <h3 class="text-3xl">{{ project.title }}</h3>
                 <div
                   class="my-1"
@@ -22,13 +22,19 @@
 
                 <Button class="mt-2" :to="'/projets/'+project.slug" type="secondary">Voir le projet</Button>
               </div>
-              <a :href="project.link" title="Voir le site" target="blank_">
+              <a v-if="project.link" :href="project.link" title="Voir le site" target="blank_">
                 <img
                   class="rounded-lg h-auto projects__project__img"
                   :src="project.thumbnail.asset.url"
                   :alt="project.alt_text"
                 />
               </a>
+              <img
+                v-else
+                class="rounded-lg h-auto projects__project__img"
+                :src="project.thumbnail.asset.url"
+                :alt="project.alt_text"
+              />
             </div>
             <hr class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2" />
           </div>
@@ -118,12 +124,11 @@ body {
 
 .projects__project__img {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 .projects__project__img:hover {
   transform: scale(1.05);
 }
-
 
 a.button.active {
   border-bottom: 3px solid var(--light-blue);
@@ -142,21 +147,20 @@ a.button:hover {
 .project-fade-leave-active {
   transition-property: all;
   transition-timing-function: ease-out;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .project-fade-enter-active {
-  transition-delay: .5s;
+  transition-delay: 0.5s;
 }
 
 .project-fade-enter,
 .project-fade-leave-to {
   opacity: 0;
-  transform: translateY(30px)
+  transform: translateY(30px);
 }
 
 .projects__project {
-  border-left: 5px solid rgba(1, 82, 162,0.5);
+  border-left: 5px solid rgba(1, 82, 162, 0.5);
 }
-
 </style>
