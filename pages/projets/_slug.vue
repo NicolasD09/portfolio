@@ -70,16 +70,6 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  list-style: inside;
-  list-style-type: " > ";
-  padding-left: 1em;
-}
-
-li::marker {
-  font-size: 1.1rem;
-}
-
 .project__image__container {
   max-height: 80vh;
   width: fit-content;
