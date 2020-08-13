@@ -1,11 +1,22 @@
 <template>
   <div>
     <transition type="transition" name="fade">
-      <div class="absolute z-50 sm:w-8/12 md:w-5/12 lg:w-4/12 rounded-lg" id="modal_container" v-if="toggleModal" v-hotkey="keymap">
+      <div
+        class="absolute z-50 sm:w-8/12 md:w-5/12 lg:w-4/12 rounded-lg"
+        id="modal_container"
+        v-if="toggleModal"
+        v-hotkey="keymap"
+      >
         <div class="relative mx-auto w-auto">
           <div class="w-auto mx-auto px-4 sm:px-8 md:px-12 pb-6 relative">
             <div class="flex flex-row justify-end">
-              <span class="text-red-700 cursor-pointer text-6xl" @click="closeModal">&times;</span>
+              <span
+                class="text-red-700 cursor-pointer text-6xl"
+                id="close_modal"
+                @click="closeModal"
+                @keyup.enter="closeModal"
+                tabindex="-1000"
+              >&times;</span>
             </div>
             <h1 class="text-2xl sm:text-4xl md:text-5xl">Bienvenue !</h1>
             <p class="text-base sm:text-xl md:text-2xl">Le site est en cours de construction !</p>
@@ -42,12 +53,19 @@ export default {
     closeModal() {
       this.toggleModal = false;
     },
+    focusModalBtn() {
+      let modalBtn = document.getElementById("close_modal");
+      modalBtn.focus()
+    },
   },
   mounted() {
     if (!this.showed) {
       setTimeout(() => {
         this.toggleModal = true;
-      }, 3000);
+        setTimeout(() => {
+          this.focusModalBtn();
+        }, 500);
+      }, 2000);
     }
     store.commit("showModal");
   },
@@ -80,8 +98,9 @@ export default {
   opacity: 0;
 }
 
-#modal_container{
+#modal_container {
   left: 50%;
   transform: translateX(-50%);
 }
+
 </style>
