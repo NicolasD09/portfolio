@@ -1,13 +1,12 @@
 <template>
-<h1 class="text-6xl">Contact</h1>
+  <h1 class="p-6 text-5xl">Page en construction !</h1>
 </template>
 
 <script>
 export default {
-  name: 'contact'
-}
+  name: "contact",
+};
 </script>
 
 <style>
-
 </style>

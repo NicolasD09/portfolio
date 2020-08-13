@@ -121,7 +121,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.main_show = true;
-    }, 400);
+    }, 200);
   },
 };
 </script>
