@@ -1,67 +1,80 @@
 <template>
   <div class="page__container">
-    <div
-      class="w-8/12 sm:w-4/12 md:w-5/12 lg:w-4/12 xl:w-2/12 flex flex-row justify-between mx-auto mt-8 mb-12 filter__links"
-    >
-      <a
-        @click="toggleActive"
-        data-filter="web"
-        class="button text-lg sm:text-2xl active cursor-pointer"
-      >Web</a>
-      <a
-        @click="toggleActive"
-        data-filter="design"
-        class="button text-lg sm:text-2xl cursor-pointer"
-      >Design</a>
-      <a
-        @click="toggleActive"
-        data-filter="logo"
-        class="button text-lg sm:text-2xl cursor-pointer"
-      >Logos</a>
-    </div>
-    <div
-      class="projects__container w-10/12 lg:w-9/12 xl:w-7/12 mx-auto my-auto overflow-y-auto overflow-x-hidden"
-    >
-      <div v-if="allProject && (allProject.length > 0)">
-        <transition-group tag="div" name="project-fade">
-          <div class="mx-auto mr-6" v-for="project in allProject" :key="project._id">
-            <div
-              class="projects__project flex flex-col items-start lg:grid lg:grid-cols-2 lg:grid-rows-1 gap-8 p-2 pl-4"
-            >
-              <div class="flex flex-col">
-                <h3 class="font-medium text-xl lg:text-2xl mb-4">{{ project.title }}</h3>
+    <transition name="project-fade">
+      <div v-if="this.main_show">
+        <div
+          class="w-8/12 sm:w-4/12 md:w-5/12 lg:w-4/12 xl:w-2/12 flex flex-row justify-between mx-auto mt-8 mb-12 filter__links"
+        >
+          <a
+            @click="toggleActive"
+            data-filter="web"
+            class="button text-lg sm:text-2xl active cursor-pointer"
+          >Web</a>
+          <a
+            @click="toggleActive"
+            data-filter="design"
+            class="button text-lg sm:text-2xl cursor-pointer"
+          >Design</a>
+          <a
+            @click="toggleActive"
+            data-filter="logo"
+            class="button text-lg sm:text-2xl cursor-pointer"
+          >Logos</a>
+        </div>
+        <div
+          class="projects__container w-10/12 lg:w-9/12 xl:w-7/12 mx-auto my-auto overflow-y-auto overflow-x-hidden"
+        >
+          <div v-if="allProject && (allProject.length > 0)">
+            <transition-group tag="div" name="project-fade">
+              <div class="mx-auto mr-6" v-for="project in allProject" :key="project._id">
                 <div
-                  class="my-1"
-                  v-for="paragraph in project.short_descriptionRaw"
-                  :key="paragraph._key"
+                  class="projects__project flex flex-col items-start lg:grid lg:grid-cols-2 lg:grid-rows-1 gap-8 p-2 pl-4"
                 >
-                  <p v-for="text in paragraph.children" :key="text._key">{{text.text}}</p>
-                </div>
+                  <div class="flex flex-col">
+                    <h3 class="font-medium text-xl lg:text-2xl mb-4">{{ project.title }}</h3>
+                    <div
+                      class="my-1"
+                      v-for="paragraph in project.short_descriptionRaw"
+                      :key="paragraph._key"
+                    >
+                      <p v-for="text in paragraph.children" :key="text._key">{{text.text}}</p>
+                    </div>
 
-                <Button class="mt-2" :to="'/projets/'+project.slug" type="secondary">Voir le projet</Button>
+                    <Button
+                      class="mt-2"
+                      :to="'/projets/'+project.slug"
+                      type="secondary"
+                    >Voir le projet</Button>
+                  </div>
+                  <a v-if="project.link" :href="project.link" title="Voir le site" target="blank_">
+                    <img
+                      class="rounded-lg h-auto projects__project__img"
+                      :src="project.thumbnail.asset.url"
+                      :alt="project.alt_text"
+                    />
+                  </a>
+                  <img
+                    v-else
+                    class="rounded-lg h-auto projects__project__img"
+                    :src="project.thumbnail.asset.url"
+                    :alt="project.alt_text"
+                  />
+                </div>
+                <hr class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2" />
               </div>
-              <a v-if="project.link" :href="project.link" title="Voir le site" target="blank_">
-                <img
-                  class="rounded-lg h-auto projects__project__img"
-                  :src="project.thumbnail.asset.url"
-                  :alt="project.alt_text"
-                />
-              </a>
-              <img
-                v-else
-                class="rounded-lg h-auto projects__project__img"
-                :src="project.thumbnail.asset.url"
-                :alt="project.alt_text"
-              />
-            </div>
-            <hr class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2" />
+            </transition-group>
           </div>
-        </transition-group>
+
+          <p v-else class="text-xl">Il n'y a pas encore de projets dans cette catégorie.</p>
+        </div>
       </div>
-      <p v-else class="text-xl">Il n'y a pas encore de projets dans cette catégorie.</p>
-    </div>
+    </transition>
     <div>
-      <img src="~/assets/img/atom.png" alt="atom image" class="hidden sm:block projects__img__bottom" />
+      <img
+        src="~/assets/img/atom.png"
+        alt="atom image"
+        class="hidden sm:block projects__img__bottom"
+      />
     </div>
     <div>
       <img
@@ -81,6 +94,7 @@ export default {
   data() {
     return {
       filter: "web",
+      main_show: false,
     };
   },
   apollo: {
@@ -103,6 +117,11 @@ export default {
       }
       this.filter = e.target.dataset.filter;
     },
+  },
+  mounted() {
+    setTimeout(() => {
+      this.main_show = true;
+    }, 400);
   },
 };
 </script>
@@ -169,6 +188,14 @@ a.button:hover {
   transition: all 0.2s ease-in-out;
 }
 
+  .projects__project {
+    border-left: 5px solid rgba(1, 82, 162, 0.5);
+  }
+
+
+
+  /* Animations */
+
 .project-fade-enter-active,
 .project-fade-leave-active {
   transition-property: all;
@@ -186,7 +213,5 @@ a.button:hover {
   transform: translateY(30px);
 }
 
-.projects__project {
-  border-left: 5px solid rgba(1, 82, 162, 0.5);
-}
+
 </style>
