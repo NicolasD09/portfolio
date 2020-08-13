@@ -3,7 +3,7 @@
     <transition name="project-fade">
       <div v-if="this.main_show">
         <div
-          class="w-8/12 sm:w-4/12 md:w-5/12 lg:w-4/12 xl:w-2/12 flex flex-row justify-between mx-auto mt-8 mb-12 filter__links"
+          class="w-8/12 sm:w-6/12 md:w-5/12 lg:w-5/12 xl:w-3/12 flex flex-row justify-between mx-auto mt-8 mb-12 filter__links"
         >
           <a
             @click="toggleActive"
