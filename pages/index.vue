@@ -9,7 +9,7 @@
             <br />n'a jamais été aussi simple
           </h1>
           <p class="text-base md:text-2xl my-4 md:mt-8">
-            Je suis degigner autodidacte et étudiant en ingénierie logicielle.<br/>
+            Je suis designer autodidacte et étudiant en ingénierie logicielle.<br/>
             Je crée des logos, cartes de visites et sites internet modernes et ergonomiques.
           </p>
           <div class="home__cta mt-12">
