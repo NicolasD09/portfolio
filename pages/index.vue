@@ -1,19 +1,18 @@
 <template>
   <div>
     <ConstructionModal />
-    <div class="sm:flex sm:flex-col md:grid md:grid-cols-2 md:grid-rows-1 px-8 ">
+    <div class="sm:flex sm:flex-col xl:grid xl:grid-cols-2 xl:grid-rows-1 xl:items-start px-8 ">
       <transition name="fade">
-        <div v-if="image_show" class="home__left flex flex-col justify-center z-10">
+        <div v-if="image_show" class="home__left flex flex-col z-10 mt-8 sm:mt-32">
           <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-regular">
-            Pouvoir créer une identité visuelle
+            Pouvoir créer une identité numérique
             <br />n'a jamais été aussi simple
           </h1>
-          <p class="text-base md:text-2xl my-4 md:my-8">
-            Vous souhaitez développer votre image numérique ? Je propose des
-            <br />services de création de sites internet, mais également de logos et visuels
-            <br />graphiques.
+          <p class="text-base md:text-2xl my-4 md:mt-8">
+            Je suis degigner autodidacte et étudiant en ingénierie logicielle.<br/>
+            Je crée des logos, cartes de visites et sites internet modernes et ergonomiques.
           </p>
-          <div class="home__cta">
+          <div class="home__cta mt-12">
             <Button type="primary" class="sm:mr-8" to="/projets">Voir mon travail</Button>
             <Button type="secondary" to="/contact">Me contacter</Button>
           </div>
@@ -27,8 +26,8 @@
             alt="programming_image"
           />
           <div class="home__right__quote text-right">
-            <p class="text-lg md:text-4xl">Le design est dans les détails</p>
-            <p class="text-base md:text-2xl">Paul Bennet</p>
+            <p class="text-lg md:text-2xl lg:text-4xl">Le design est dans les détails</p>
+            <p class="text-base md:text-lg lg:text-2xl">Paul Bennet</p>
           </div>
           <div class="home__right__social">
             <div class="flex flex-row">
