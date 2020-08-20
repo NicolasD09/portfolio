@@ -13,8 +13,8 @@ button.primary span {
 }
 
 button.primary:hover,
-button.secondary:hover{
-  transform: translateY(-1px)
+button.secondary:hover {
+  transform: translateY(-1px);
 }
 
 button.primary:hover {

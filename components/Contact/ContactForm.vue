@@ -13,7 +13,9 @@
       <div class="mt-16">
         <p class="text-xl">Sinon, envoyez-moi un mail directement :</p>
         <Button type="primary">
-          Voir mon e-mail
+          <span>
+            Voir mon e-mail
+          </span>
         </Button>
       </div>
     </div>
@@ -59,7 +61,7 @@ export default {};
 
 <style scoped>
 form {
-  border-top: 8px solid var(--links-color);
+  border-top: 8px solid var(--light-blue);
   background-color: var(--form-bg);
 }
 
