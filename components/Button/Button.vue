@@ -8,16 +8,19 @@
       </button>
     </nuxt-link>
     <button v-else :class="type" class="p-2">
-      <slot></slot>
+      <slot>
+        <span class="text-base">
+          <slot></slot>
+        </span>
+      </slot>
     </button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["type", "to"],
+  props: ["type", "to"]
 };
 </script>
 
-<style src="./Button.css">
-</style>
+<style src="./Button.css"></style>
