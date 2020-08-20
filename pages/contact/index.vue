@@ -1,12 +1,13 @@
 <template>
-  <h1 class="p-6 text-5xl">Page en construction !</h1>
+  <ContactForm />
 </template>
 
 <script>
+import ContactForm from "~/components/Contact/ContactForm.vue";
+
 export default {
-  name: "contact",
+  name: "contact"
 };
 </script>
 
-<style>
-</style>
+<style></style>
