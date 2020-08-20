@@ -190,16 +190,27 @@ body {
 .projects__project__img:hover {
   transform: scale(1.05);
 }
-a.button.active {
-  border-bottom: 3px solid var(--light-blue);
-  font-weight: 700;
-  transition: all 0.3s ease-in-out;
+
+a.button::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--light-blue);
+  transition: width 0.3s;
 }
-a.button:hover {
-  transform: translateY(-1px);
-  border-bottom: 3px solid var(--light-blue);
-  font-weight: 700;
-  transition: all 0.2s ease-in-out;
+
+a.button:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+a.button.active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--light-blue);
 }
 .projects__project {
   border-left: 5px solid rgba(1, 82, 162, 0.5);
