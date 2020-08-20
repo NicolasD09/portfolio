@@ -28,7 +28,7 @@
   margin: 4px;
   border-radius: 5px;
   background-color: var(--text-color);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   z-index: 999;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .toggle .line1 {
-  transform: rotate(-45deg) translate(-11px,3px);
+  transform: rotate(-45deg) translate(-11px, 3px);
 }
 .toggle .line2 {
   opacity: 0;
@@ -60,24 +60,34 @@
   transform: rotate(45deg) translate(-11px, -3px);
 }
 
-
-
-
-
 /* Navlinks transitions */
-a.nuxt-link-exact-active {
-  font-weight: bold;
-  transition: 0.3s;
-  border-bottom: 3px solid var(--links-color);
-  font-weight: 700;
-  transition: all 0.3s ease-in-out;
-  padding-bottom: 5px;
+
+a.nav-link {
+  display: inline-block;
 }
 
-a.nav-link:hover {
-  transform: translateY(-1px);
-  border-bottom: 3px solid var(--links-color);
-  font-weight: 700;
-  transition: all 0.2s ease-in-out;
-  padding-bottom: 5px;
+a.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--light-blue);
+  transition: width 0.3s;
+}
+
+a.nav-link:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+a.nuxt-link-exact-active {
+  font-weight: 400;
+}
+
+a.nuxt-link-exact-active::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--light-blue);
 }
