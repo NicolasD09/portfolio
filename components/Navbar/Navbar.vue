@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between items-center lg:items-start py-4 md:px-8 sm:px-4 px-2">
+    <div
+      class="flex flex-row justify-between items-center lg:items-start py-4 md:px-8 sm:px-4 px-2"
+    >
       <div class="logo lg:mx-0">
         <svg>
           <!-- 86x206 -->
@@ -23,9 +25,9 @@
           <span class="text-xl">Expériences</span>
         </nuxt-link>
 
-        <nuxt-link class="xl:mx-10 lg:mx-6 nav-link" to="/about">
+        <!-- <nuxt-link class="xl:mx-10 lg:mx-6 nav-link" to="/about">
           <span class="text-xl">A propos</span>
-        </nuxt-link>
+        </nuxt-link> -->
 
         <nuxt-link class="xl:mx-10 lg:mx-6 nav-link" to="/contact">
           <span class="text-xl">Contact</span>
@@ -44,27 +46,27 @@
 
     <div class="flex flex-col navbar">
       <ul>
-        <li class="my-5">
+        <li class="my-5" @click="navSlide">
           <nuxt-link to="/">
             <span class="text-md">Accueil</span>
           </nuxt-link>
         </li>
-        <li class="my-5">
+        <li class="my-5" @click="navSlide">
           <nuxt-link to="/projets">
             <span class="text-md">Projets</span>
           </nuxt-link>
         </li>
-        <li class="my-5">
+        <li class="my-5" @click="navSlide">
           <nuxt-link to="/experiences">
             <span class="text-md">Expériences</span>
           </nuxt-link>
         </li>
-        <li class="my-5">
+        <!-- <li class="my-5" @click="navSlide">
           <nuxt-link to="/about">
             <span class="text-md">A propos</span>
           </nuxt-link>
-        </li>
-        <li class="my-5">
+        </li> -->
+        <li class="my-5" @click="navSlide">
           <nuxt-link to="/contact">
             <span class="text-md">Contact</span>
           </nuxt-link>
@@ -84,10 +86,9 @@ export default {
       const nav = document.querySelector(".navbar");
       nav.classList.toggle("nav-active");
       burger.classList.toggle("toggle");
-    },
-  },
+    }
+  }
 };
 </script>
 
-<style src="./Navbar.css">
-</style>
+<style src="./Navbar.css"></style>

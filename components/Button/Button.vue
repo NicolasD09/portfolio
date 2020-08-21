@@ -1,13 +1,13 @@
 <template>
   <div class="inline-block">
     <nuxt-link v-if="to" :to="to">
-      <button :class="type" class="p-2">
+      <button :class="type" class="p-2" :disabled="disabled">
         <span class="text-base">
           <slot></slot>
         </span>
       </button>
     </nuxt-link>
-    <button v-else :class="type" class="p-2">
+    <button v-else :class="type" class="p-2" :disabled="disabled">
       <slot>
         <span class="text-base">
           <slot></slot>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  props: ["type", "to"]
+  props: ["type", "to", "disabled"]
 };
 </script>
 

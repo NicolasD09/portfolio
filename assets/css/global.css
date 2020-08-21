@@ -11,6 +11,7 @@
   --links-color: #0152a2;
   --light-grey: #cdcdcd;
   --form-bg: #e8edf1;
+  --shadow: rgba(104, 104, 104, 0.3);
 }
 
 .theme-dark {
@@ -24,6 +25,7 @@
   --links-color: #e6e6e6;
   --light-grey: #cdcdcd;
   --form-bg: #000e1c;
+  --shadow: rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -79,6 +81,10 @@ button {
 
 button:focus {
   outline: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 
 ul {
