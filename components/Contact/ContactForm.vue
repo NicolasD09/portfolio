@@ -87,8 +87,11 @@
               class="mt-8"
               disabled
               title="Le formulaire n'est pas encore fonctionnel"
-              >Envoyer</Button
             >
+              <span>
+                Envoyer
+              </span>
+            </Button>
           </div>
         </form>
       </div>
