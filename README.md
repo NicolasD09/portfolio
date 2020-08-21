@@ -1,20 +1,29 @@
-# portfolio
+# My Portfolio
 
-## Build Setup
+This is my portfolio built with [NuxtJS](https://https://nuxtjs.org/), [TailwindCSS](https://tailwindcss.com) and [Sanity.io](https://sanity.io)
 
-```bash
-# install dependencies
-$ npm install
+## Packages I have used :
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+- nuxtjs/apollo
+- graphql-tag
+- sanity-blocks-vue-component
+- v-hotkey
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## Visit the website :
 
-# generate static project
-$ npm run generate
-```
+[Current version](https://nicdx.dev) - nicdx.dev  
+[Development version](https://developer.nicdx.dev) - developer.nicdx.dev
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+The website is in French at the moment but i am planning on releasing an English translation in the future.
+
+## Reach me :
+
+🏡 [website][website] **|**
+🐦 [twitter][twitter] **|**
+📷 [instagram][instagram] **|**
+👔 [linkedin][linkedin]
+
+[website]: https://nicdx.dev
+[twitter]: https://twitter.com/NDX_dev
+[instagram]: https://instagram.com/nic_ndx
+[linkedin]: https://linkedin.com/in/nicdx-dev
