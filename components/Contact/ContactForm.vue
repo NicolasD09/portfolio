@@ -123,28 +123,25 @@ export default {
 </script>
 
 <style scoped>
-form {
-  /* border-top: 8px solid var(--light-blue); */
-  /* background-color: var(--form-bg); */
-  box-shadow: 0 0 40px var(--shadow);
-}
-
 input,
 textarea {
-  border-color: var(--links-color);
+  border-bottom: 2px solid var(--links-color);
+  padding: 5px;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--light-blue);
-  transition: all 0.3s linear;
+  /* border-bottom: 2px solid var(--light-blue); */
+  transition: all 0.5s ease-in-out;
+  border: 2px solid var(--light-blue);
+  border-radius: 5px;
 }
 
 input:focus + label,
 textarea:focus + label {
-  transform: translateY(-25px);
-  transition: all 0.3s linear;
+  transform: translateY(-30px);
+  transition: all 0.4s cubic-bezier(0.72, 0.16, 0.36, 1.58);
 }
 
 input,
