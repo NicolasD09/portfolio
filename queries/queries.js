@@ -37,7 +37,7 @@ export const getProject = gql`
 `;
 export const getExperiences = gql`
   query getExperience {
-    allExperience(sort: [{ annee_fin: DESC }]) {
+    allExperience(sort: [{ date_fin: DESC }]) {
       title
       _id
       date_debut
