@@ -11,14 +11,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/apollo": "^4.0.1-rc.1",
-    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/apollo": "^4.0.1-rc.3",
+    "@nuxtjs/axios": "^5.12.1",
     "graphql-tag": "^2.11.0",
-    "nuxt": "^2.14.0",
+    "nuxt": "^2.14.3",
     "sanity-blocks-vue-component": "^0.1.0",
     "v-hotkey": "^0.8.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^2.0.0"
+    "@nuxtjs/tailwindcss": "^2.1.1"
   }
 }
