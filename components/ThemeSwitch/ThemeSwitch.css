@@ -1,28 +1,27 @@
-label.toggle{
+label.toggle {
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
   cursor: pointer;
-  transition: all .5s;
+  transition: all 0.5s;
   z-index: 2;
 }
 
 .toggle.light,
-.toggle.dark{
-  background-position:center center;
+.toggle.dark {
+  background-position: center center;
   background-size: 40px;
   background-repeat: no-repeat;
-
 }
 
-.toggle.light{
-  background-image: url('~@/assets/img/sun.svg');
-  background-color: var(--dark-blue);
+.toggle.light {
+  background-image: url("~@/assets/img/sun.svg");
+  /* background-color: var(--dark-blue); */
 }
-.toggle.dark{
-  background-image: url('~@/assets/img/moon.svg');
-  background-color: var(--bg-logo);
+.toggle.dark {
+  background-image: url("~@/assets/img/moon.svg");
+  /* background-color: var(--bg-logo); */
 }
 
 .toggle input {
