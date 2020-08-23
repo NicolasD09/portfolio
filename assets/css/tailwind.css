@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .z-1 {
   z-index: -1;
@@ -8,22 +8,22 @@
 
 @responsive {
   .h-xl {
-    height: 55vh;
+    max-height: 58vh;
   }
 
-  .h-high{
-    height: 46vh;
+  .h-high {
+    max-height: 46vh;
   }
-  
-  .h-med{
-    height: 38vh;
+
+  .h-med {
+    max-height: 38vh;
   }
-  
-  .h-small{
-    height: 32vh;
+
+  .h-small {
+    max-height: 32vh;
   }
 
   .h-mobile {
-    height: 25vh
+    max-height: 25vh;
   }
 }

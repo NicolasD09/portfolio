@@ -2,12 +2,12 @@
   <div>
     <ConstructionModal />
     <div
-      class="sm:flex sm:flex-col xl:grid xl:grid-cols-2 xl:grid-rows-1 xl:items-start px-8 "
+      class="sm:flex sm:flex-col xl:grid xl:grid-cols-2 xl:grid-rows-1 xl:items-start px-8 mx-auto home__wrapper lg:w-11/12"
     >
       <transition name="fade">
         <div
           v-if="image_show"
-          class="home__left flex flex-col z-10 mt-8 sm:mt-32"
+          class="home__left flex flex-col z-10 mt-8 sm:mt-32 mx-auto"
         >
           <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-regular">
             Pouvoir créer une identité numérique
@@ -29,70 +29,63 @@
       </transition>
       <transition type="transition" name="slide-fade">
         <div
-          class="home__right mt-8 md:mt-0 gap-4 sm:gap-8 z-10"
+          class="home__right mt-8 md:mt-0 z-10 flex flex-col content-end"
           v-if="image_show"
         >
           <img
-            class="home__right__image h-mobile lg:h-high md:h-med sm:h-small xl:h-xl"
-            src="~/assets/img/programming_illustration.webp"
+            class="home__right__image h-mobile lg:h-high md:h-med sm:h-small xl:h-xl w-auto self-end"
+            src="~/assets/img/wireframe_picture.webp"
             alt="programming_image"
           />
-          <div class="home__right__quote text-right">
-            <p class="text-lg md:text-2xl lg:text-4xl">
-              Le design est dans les détails
-            </p>
-            <p class="text-base md:text-lg lg:text-2xl">Paul Bennet</p>
-          </div>
-          <div class="home__right__social">
-            <div class="flex flex-row">
-              <a
-                class="mx-5"
-                href="https://twitter.com/NDX_dev"
-                target="_blank"
-              >
-                <img
-                  class="h-8 md:h-12 home__right__social__img"
-                  src="~/assets/img/twitter.svg"
-                  alt
-                />
-              </a>
-              <a class="mx-5" href="https://codepen.io/NDX_dev" target="_blank">
-                <img
-                  class="h-8 md:h-12 home__right__social__img"
-                  src="~/assets/img/codepen.svg"
-                  alt
-                />
-              </a>
-              <a
-                class="mx-5"
-                href="https://github.com/NicolasD09"
-                target="_blank"
-              >
-                <img
-                  class="h-8 md:h-12 home__right__social__img"
-                  src="~/assets/img/github.svg"
-                  alt
-                />
-              </a>
-              <a
-                class="mx-5"
-                href="https://www.linkedin.com/in/nicdx-dev/"
-                target="_blank"
-              >
-                <img
-                  class="h-8 md:h-12 home__right__social__img"
-                  src="~/assets/img/linkedin.svg"
-                  alt
-                />
-              </a>
+          <div class="flex flex-col justify-end">
+            <div class="home__right__quote text-right mt-16">
+              <p class="text-lg md:text-2xl lg:text-4xl inline-block">
+                Le design est dans les détails
+              </p>
+              <p class="text-base md:text-lg lg:text-2xl">Paul Bennet</p>
             </div>
           </div>
         </div>
       </transition>
     </div>
+    <div class="home__right__social w-full text-center">
+      <a class="mx-5" href="https://twitter.com/NDX_dev" target="_blank">
+        <img
+          class="home__right__social__img"
+          src="~/assets/img/twitter.svg"
+          alt
+        />
+      </a>
+      <a class="mx-5" href="https://codepen.io/NDX_dev" target="_blank">
+        <img
+          class="home__right__social__img"
+          src="~/assets/img/codepen.svg"
+          alt
+        />
+      </a>
+      <a class="mx-5" href="https://github.com/NicolasD09" target="_blank">
+        <img
+          class="home__right__social__img"
+          src="~/assets/img/github.svg"
+          alt
+        />
+      </a>
+      <a
+        class="mx-5"
+        href="https://www.linkedin.com/in/nicdx-dev/"
+        target="_blank"
+      >
+        <img
+          class="home__right__social__img"
+          src="~/assets/img/linkedin.svg"
+          alt
+        />
+      </a>
+    </div>
+
     <transition name="fade">
       <div v-if="main_show" class="home__circles bottom-0 left-0 fixed">
-        <img src="~/assets/img/circles_corner.webp" alt />
+        <img src="~/assets/img/angle_corner.webp" alt />
       </div>
     </transition>
   </div>
@@ -128,6 +121,12 @@ export default {
 * {
   z-index: 10;
 }
+
+.home__wrapper {
+  min-height: 80vh;
+  padding-bottom: 50px;
+}
+
 .home__circles {
   z-index: 0;
 }
@@ -156,15 +155,24 @@ export default {
   opacity: 0;
 }
 
-.home__right {
-  display: grid;
-  grid-template-rows: auto 1fr 1fr;
-  justify-items: end;
-  align-items: center;
+.home__right__quote p:nth-child(1) {
+  border-left: 3px solid var(--light-grey);
+  padding-left: 0.5rem;
 }
 
-.home__right__social div a:hover {
+.home__right__social__img {
+  height: 36px;
+  display: inline-block;
+}
+
+.home__right__social a:hover {
   transform: translateY(-3px);
-  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
+}
+
+.home__right__social {
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 1em;
 }
 </style>
