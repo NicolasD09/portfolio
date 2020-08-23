@@ -7,43 +7,61 @@
       >
         <div class="exp__container overflow-y-auto overflow-x-hidden">
           <h1 class="text-4xl mb-8 underline text-center">Expériences</h1>
-          <div v-if="allExperience && (allExperience.length > 0)">
-            <div v-for="(exp) in allExperience" :key="exp._id" class="sm:px-8">
-              <p class>{{exp.date_debut}} à {{exp.date_fin}} ~ {{exp.duree}}</p>
+          <div v-if="allExperience && allExperience.length > 0">
+            <div v-for="exp in allExperience" :key="exp._id" class="sm:px-8">
+              <p class>
+                {{ exp.date_debut }} à {{ exp.date_fin }} ~ {{ exp.duree }}
+              </p>
               <h2 class="text-lg sm:text-2xl font-medium my-3">
-                {{exp.title}} ~
-                <span class="underline">{{exp.company}}</span>
+                {{ exp.title }} ~
+                <span class="underline">{{ exp.company }}</span>
               </h2>
               <block-content :blocks="exp.job_descriptionRaw" />
               <p class="mt-4 underline">
-                <span class="font-medium">{{exp.job_type}}</span>
+                <span class="font-medium">{{ exp.job_type }}</span>
                 ~
-                {{exp.city}}
+                {{ exp.city }}
               </p>
-              <hr class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2" />
+              <hr
+                class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2"
+              />
             </div>
           </div>
         </div>
-        <div class="hidden lg:block border-gray-500 border-l-2 border-opacity-50 middle__border"></div>
+        <div
+          class="hidden lg:block border-gray-500 border-l-2 border-opacity-50 middle__border"
+        ></div>
         <div class="diplomas__container overflow-y-auto overflow-x-hidden">
           <h1 class="text-4xl mb-8 underline text-center">Diplômes</h1>
-          <div v-if="allDiploma && (allDiploma.length > 0)">
-            <div v-for="(diploma) in allDiploma" :key="diploma._id" class="sm:px-8">
-              <p class>{{diploma.date_debut}} à {{diploma.date_fin}}</p>
-              <h2 class="text-lg sm:text-2xl font-medium my-3">{{diploma.title}}</h2>
+          <div v-if="allDiploma && allDiploma.length > 0">
+            <div
+              v-for="diploma in allDiploma"
+              :key="diploma._id"
+              class="sm:px-8"
+            >
+              <p class>{{ diploma.date_debut }} à {{ diploma.date_fin }}</p>
+              <h2 class="text-lg sm:text-2xl font-medium my-3">
+                {{ diploma.title }}
+              </h2>
               <block-content :blocks="diploma.descriptionRaw" />
               <p class="mt-4 underline">
-                <span class="font-medium">{{diploma.school}}</span>
+                <span class="font-medium">{{ diploma.school }}</span>
                 ~
-                {{diploma.city}}
+                {{ diploma.city }}
               </p>
-              <hr class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2" />
+              <hr
+                class="border-gray-500 border-opacity-50 my-8 mx-auto w-1/2"
+              />
             </div>
           </div>
         </div>
       </div>
     </transition>
-    <img src="~/assets/img/pill.png" alt="background image" class="exp__image" />
+    <img
+      src="~/assets/img/pill.webp"
+      alt="background image"
+      class="exp__image"
+    />
   </div>
 </template>
 
@@ -57,25 +75,25 @@ Vue.component("block-content", BlockContent);
 export default {
   data() {
     return {
-      main_show: false,
+      main_show: false
     };
   },
   name: "experiences",
   apollo: {
     allExperience: {
       prefetch: true,
-      query: getExperiences,
+      query: getExperiences
     },
     allDiploma: {
       prefetch: true,
-      query: getDiplomas,
-    },
+      query: getDiplomas
+    }
   },
   mounted() {
     setTimeout(() => {
       this.main_show = true;
     }, 200);
-  },
+  }
 };
 </script>
 

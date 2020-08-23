@@ -66,14 +66,14 @@
                   >
                     <img
                       class="rounded-lg h-auto projects__project__img"
-                      :src="project.thumbnail.asset.url"
+                      :src="`${project.thumbnail.asset.url}?fm=webp`"
                       :alt="project.alt_text"
                     />
                   </a>
                   <img
                     v-else
                     class="rounded-lg h-auto projects__project__img"
-                    :src="project.thumbnail.asset.url"
+                    :src="`${project.thumbnail.asset.url}?fm=webp`"
                     :alt="project.alt_text"
                   />
                 </div>
@@ -92,14 +92,14 @@
     </transition>
     <div>
       <img
-        src="~/assets/img/atom.png"
+        src="~/assets/img/atom.webp"
         alt="atom image"
         class="hidden sm:block projects__img__bottom"
       />
     </div>
     <div>
       <img
-        src="~/assets/img/curves_right.png"
+        src="~/assets/img/curves_right.webp"
         alt="curves right"
         class="hidden sm:block projects__img__right absolute bottom-0 right-0"
       />
