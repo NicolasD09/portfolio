@@ -39,17 +39,9 @@
                 >
                   <div class="flex flex-col">
                     <h3 class="font-medium text-xl lg:text-2xl mb-4">
-                      {{ project.title }}
+                      {{ project.title.fr }}
                     </h3>
-                    <div
-                      class="my-1"
-                      v-for="paragraph in project.short_descriptionRaw"
-                      :key="paragraph._key"
-                    >
-                      <p v-for="text in paragraph.children" :key="text._key">
-                        {{ text.text }}
-                      </p>
-                    </div>
+                    <p class="m1">{{ project.short_description.fr }}</p>
 
                     <Button
                       class="mt-2"
