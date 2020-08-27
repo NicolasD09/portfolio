@@ -4,11 +4,24 @@ export const getAllProjects = gql`
   query getAllProjects($filter: String!) {
     allProject(where: { project_type: { eq: $filter } }) {
       _id
-      title
+      title {
+        fr
+        en
+      }
       slug
       link
-      short_descriptionRaw
-      alt_text
+      short_description {
+        fr
+        en
+      }
+      long_description {
+        fr
+        en
+      }
+      alt_text {
+        fr
+        en
+      }
       thumbnail {
         asset {
           url
@@ -18,14 +31,24 @@ export const getAllProjects = gql`
   }
 `;
 
+// $slug
 export const getProject = gql`
   query getProject($slug: String!) {
     allProject(where: { slug: { eq: $slug } }) {
-      title
+      title {
+        fr
+        en
+      }
       _id
-      alt_text
+      alt_text {
+        fr
+        en
+      }
       link
-      long_descriptionRaw
+      long_description {
+        fr
+        en
+      }
       technologies
       image {
         asset {
