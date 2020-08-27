@@ -1,14 +1,10 @@
 <template>
   <div>
-    <ConstructionModal />
     <div
-      class="sm:flex sm:flex-col xl:grid xl:grid-cols-2 xl:grid-rows-1 xl:items-start px-8 mx-auto home__wrapper lg:w-11/12"
+      class="sm:flex sm:flex-col xl:grid xl:grid-cols-2 xl:grid-rows-1 xl:items-start px-8 m-auto home__wrapper lg:w-11/12"
     >
       <transition name="fade">
-        <div
-          v-if="image_show"
-          class="home__left flex flex-col z-10 mt-8 sm:mt-32 mx-auto"
-        >
+        <div class="home__left flex flex-col z-10 mt-8 sm:mt-32 mx-auto">
           <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-regular">
             Pouvoir créer une identité numérique
             <br />n'a jamais été aussi simple
@@ -32,9 +28,10 @@
           class="home__right mt-8 md:mt-0 z-10 flex flex-col content-end"
           v-if="image_show"
         >
+          <!-- src="~/assets/img/wireframe_picture.webp" -->
           <img
             class="home__right__image h-mobile lg:h-high md:h-med sm:h-small xl:h-xl w-auto self-end"
-            src="~/assets/img/wireframe_picture.webp"
+            src="~/assets/img/home_bg_lg_curve.png"
             alt="programming_image"
           />
           <div class="flex flex-col justify-end">
@@ -92,7 +89,7 @@
 </template>
 
 <script>
-import ConstructionModal from "@/components/ConstructionModal/ConstructionModal";
+// import ConstructionModal from "@/components/ConstructionModal/ConstructionModal";
 import Button from "@/components/Button/Button";
 
 export default {
@@ -103,7 +100,7 @@ export default {
     };
   },
   components: {
-    ConstructionModal,
+    // ConstructionModal,
     Button
   },
   mounted() {
