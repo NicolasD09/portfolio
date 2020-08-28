@@ -74,16 +74,17 @@ export const getExperiences = gql`
   }
 `;
 
-export const getDiplomas = gql`
-  query getDiplomas {
-    allDiploma(sort: [{ annee_fin: DESC }]) {
-      _id
-      title
-      descriptionRaw
-      date_debut
-      date_fin
-      school
-      city
+export const getHomepage = gql`
+  query getHomepage {
+    allHomepage {
+      title {
+        fr
+        en
+      }
+      tagline {
+        fr
+        en
+      }
     }
   }
 `;

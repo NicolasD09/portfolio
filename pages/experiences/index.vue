@@ -83,10 +83,6 @@ export default {
     allExperience: {
       prefetch: true,
       query: getExperiences
-    },
-    allDiploma: {
-      prefetch: true,
-      query: getDiplomas
     }
   },
   mounted() {

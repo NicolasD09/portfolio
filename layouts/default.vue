@@ -1,7 +1,9 @@
 <template>
   <div v-bind:class="theme" id="app">
-    <Navbar />
-    <Nuxt />
+    <div class="layout md:grid">
+      <Navbar />
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -14,26 +16,30 @@ export default {
     return {};
   },
   components: {
-    Navbar,
+    Navbar
   },
   computed: {
     theme: {
-      get: function () {
+      get: function() {
         return store.state.theme;
-      },
-    },
+      }
+    }
   },
   mounted() {
     const userPrefersDark =
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if (userPrefersDark) {
-      store.commit("switchTheme");
-    }
+    // if (userPrefersDark) {
+    //   store.commit("switchTheme");
+    // }
   }
 };
 </script>
 
 <style>
+.layout {
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 1fr;
+}
 </style>
