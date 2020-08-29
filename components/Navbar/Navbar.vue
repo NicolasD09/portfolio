@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex flex-row justify-end items-center px-2 mobile_nav sm:desktop_nav sm:justify-around z-50 sm:bg-transparent"
+      class="flex flex-row justify-center items-center px-2 mobile_nav sm:desktop_nav sm:justify-around z-50 sm:bg-transparent"
     >
       <div
         class="hidden sm:flex sm:flex-col-reverse sm:justify-around sm:content-end"
