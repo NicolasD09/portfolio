@@ -1,9 +1,11 @@
 <template>
   <div>
     <div
-      class="flex flex-row content-start align-baseline py-4 md:px-8 sm:px-4 px-2 desktop_nav"
+      class="flex flex-row justify-end items-center px-2 mobile_nav sm:desktop_nav sm:justify-around z-50 bg-white sm:bg-transparent"
     >
-      <div class="hidden lg:flex lg:flex-col-reverse lg:justify-around">
+      <div
+        class="hidden sm:flex sm:flex-col-reverse sm:justify-around sm:content-end"
+      >
         <!-- <ThemeSwitch /> -->
 
         <nuxt-link class="xl:mx-10 lg:mx-6 nav-link" to="/">
@@ -27,7 +29,7 @@
         </nuxt-link>
       </div>
       <div
-        class="burger cursor-pointer mt-2 lg:hidden flex flex-col items-end h-auto"
+        class="burger cursor-pointer sm:hidden flex flex-col items-end h-auto"
         @click="navSlide"
       >
         <div class="line1"></div>
@@ -36,7 +38,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col navbar">
+    <div class="flex flex-col" id="navbar">
       <ul>
         <li class="my-5" @click="navSlide">
           <nuxt-link to="/">
@@ -74,9 +76,10 @@
 export default {
   methods: {
     navSlide() {
-      const burger = document.querySelector(".burger");
-      const nav = document.querySelector(".navbar");
+      const burger = document.querySelector(".mobile .burger");
+      const nav = document.querySelector(".mobile #navbar");
       nav.classList.toggle("nav-active");
+      console.log(nav.classList);
       burger.classList.toggle("toggle");
     }
   }

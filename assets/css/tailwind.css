@@ -26,4 +26,35 @@
   .h-mobile {
     max-height: 25vh;
   }
+
+  .desktop_nav {
+    z-index: 999;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+  }
+
+  .desktop_nav div:first-child {
+    width: 100px;
+    position: absolute;
+    height: 100%;
+    align-items: center;
+  }
+
+  .desktop_nav div:first-child > a {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    z-index: 999;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile_nav {
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+  }
 }
