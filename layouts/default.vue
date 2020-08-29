@@ -50,9 +50,9 @@ export default {
   min-height: 100vh;
 }
 
-.layout_mobile {
+/* .layout_mobile {
   min-height: 100vh;
-}
+} */
 
 .pb-55 {
   padding-bottom: 55px;

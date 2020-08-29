@@ -3,52 +3,24 @@
     <div v-if="main_show">
       <div v-for="(homepage, index) in allHomepage" :key="index">
         <transition name="fade">
-          <div class="home__left flex flex-col z-10 mt-6 mx-auto h-full">
-            <div class="logo">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="504"
-                height="210"
-                viewBox="0 0 504 210"
-              >
-                <defs>
-                  <rect id="rect-1" width="504" height="210" x="0" y="0" />
-                  <rect id="rect-2" width="504" height="210" x="0" y="0" />
-                  <mask
-                    id="mask-3"
-                    maskContentUnits="userSpaceOnUse"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <rect width="504" height="210" x="0" y="0" fill="black" />
-                    <use fill="white" xlink:href="#rect-2" />
-                  </mask>
-                  <rect
-                    id="rect-4"
-                    width="503.96"
-                    height="210.966"
-                    x="0"
-                    y="-.966"
-                  />
-                </defs>
-                <g>
-                  <use fill="none" xlink:href="#rect-2" />
-                  <g mask="url(#mask-3)">
-                    <path
-                      fill="rgb(0,27,53)"
-                      fill-rule="evenodd"
-                      d="M55.64416415 209.89532982H0V.5192577h72.37667387l70.89140388 153.7137015V.51925771h55.64440605l23.32526998.04051351-.0399136-.04051351s49.64768898-1.48533144 77.14574513 12.67740598c26.17485961 13.47991842 63.39853132 52.92309041 63.39853132 52.92309041L426.81434125.5192577h77.14574514L401.65183585 105.2689876l102.18609072 104.62634222h-77.14574514l-49.43239741-50.6529789-14.51766739-14.87547978-.002419.00369424-75.5588769-77.388329c-.05805615-.05996985-.11732181-.11957028-.17537797-.17904757l-.00846652-.0092356c-9.58652268-9.7635113-23.0724838-15.62257859-38.51542116-15.62257859h-41.98185746v108.01186843l41.98185746.05910786c30.67542116 0 53.63300216-23.11979576 53.63300216-54.03542657 0-5.03599024-1.18047517-8.9914148-2.84958964-12.75855616-.31084233-.7393409-.06168466-1.59874466.59265659-2.04919586.65313175-.45057434 1.5300216-.36486793 2.0876026.20367586 16.92215982 17.19669496 56.82971921 57.82768879 56.82971921 57.82768879s-31.00198704 31.61408877-46.35663067 47.24073102C298.33969763 210 280.78738661 209.89532982 280.78738661 209.89532982h-53.9111879l-.04717063-.04925656-27.91654428.04925656h-91.12615119L55.64416415 96.8660655v113.02926432z"
-                    />
-                  </g>
-                </g>
-              </svg>
+          <div
+            class="home__left flex flex-col z-10 mt-6 mx-auto h-full pb-12 lg:pb-0"
+          >
+            <div class="logo w-1/2 mx-auto xl:mx-0">
+              <img
+                src="~/static/logo/logo.svg"
+                alt=""
+                class="w-8/12 xl:w-full"
+              />
             </div>
             <h1
-              class="text-xl sm:text-2xl md:text-4xl lg:text-6xl md:mt-8 font-regular w-1/2"
+              class="text-xl sm:text-2xl md:text-4xl mt-8 lg:mt-0 lg:text-6xl font-regular w-10/12 xl:w-1/2"
             >
               {{ homepage.title.fr }}
             </h1>
-            <p class="text-base md:text-3xl my-4 md:mt-8 w-5/12">
+            <p
+              class="text-base sm:text-xl md:text-3xl my-4 md:mt-8 w-11/12 lg:w-5/12"
+            >
               {{ homepage.tagline.fr }}
             </p>
             <div class="home__cta mt-12">
@@ -61,7 +33,7 @@
         </transition>
         <transition type="transition" name="slide-fade">
           <div
-            class="home__right absolute top-0 right-0 w-7/12"
+            class="home__right absolute top-0 right-0 xl:w-1/2 w-full"
             v-if="image_show"
           >
             <img
@@ -73,7 +45,6 @@
         </transition>
       </div>
     </div>
-
     <div class="home__right__social w-full text-center">
       <a class="mx-5" href="https://twitter.com/NDX_dev" target="_blank">
         <img
@@ -147,14 +118,11 @@ export default {
 * {
   z-index: 10;
 }
-.logo,
-.logo svg {
-  height: 210px;
-  width: 504px;
+.logo {
+  height: fit-content;
+  width: fit-content;
 }
-.logo path {
-  fill: var(--bg-logo);
-}
+
 .home__wrapper {
   min-height: 80vh;
   padding-bottom: 50px;
@@ -163,16 +131,19 @@ export default {
 .home__left {
   left: 10%;
   position: relative;
+  order: 1;
+  height: fit-content;
 }
 
 .home__right {
   z-index: 0;
-  left: 50%;
+  order: 0;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .home__right__image {
   border-bottom-left-radius: 30px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .slide-fade-enter-active,
@@ -215,10 +186,48 @@ export default {
   filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
 }
 
-.home__right__social {
-  position: absolute;
-  margin: 0 auto;
-  padding-bottom: 1em;
-  bottom: 1em;
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .home__left {
+    margin: 52% auto 0 auto;
+  }
+  .home__right {
+    border-bottom-right-radius: 30px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home__right__social {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-25%);
+    width: fit-content;
+    bottom: 2em;
+  }
+}
+@media (min-width: 640px) and (max-width: 1280px) {
+  .home__right {
+    border-bottom-right-radius: 30px;
+    margin-top: -20%;
+  }
+  .home__right__image {
+    border-bottom-right-radius: 30px;
+  }
+  .home__left {
+    margin: 44% auto 0 auto;
+  }
+}
+
+@media (max-width: 1280px) {
+  .home__right__social {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    bottom: 0;
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
 }
 </style>
