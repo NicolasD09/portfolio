@@ -6,6 +6,43 @@
   display: none;
 }
 
+@responsive {
+  .desktop_nav {
+    z-index: 999;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+  }
+
+  .desktop_nav div:first-child {
+    width: 100px;
+    position: absolute;
+    height: 100%;
+    align-items: center;
+    position: fixed;
+    background-color: #fff;
+    z-index: 999;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .desktop_nav div:first-child > a {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    z-index: 999;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile_nav {
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
 .mobile #navbar {
   position: absolute;
   right: 0;
@@ -43,6 +80,10 @@
 .mobile #navbar.nav-active {
   transform: translateX(0);
   box-shadow: -3px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.mobile #navbar li {
+  width: fit-content;
 }
 
 .burger.toggle {

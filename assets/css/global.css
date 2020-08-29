@@ -93,9 +93,7 @@ button:disabled {
 }
 
 ul {
-  list-style: inside;
-  list-style-type: " > ";
-  padding-left: 1em;
+  list-style-type: none;
 }
 
 li::marker {

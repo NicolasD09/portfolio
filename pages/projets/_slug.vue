@@ -114,6 +114,10 @@ p {
   margin-top: 1rem;
 }
 
+ul {
+  list-style-type: " > ";
+  padding-left: 1em;
+}
 /* Animations */
 
 .project-fade-enter-active,
