@@ -40,6 +40,7 @@
     position: fixed;
     bottom: 0;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-color);
   }
 }
 
@@ -57,7 +58,15 @@
 }
 
 .mobile #navbar ul {
-  margin-top: 130px;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.mobile_theme_switch {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 8em;
 }
 
 .mobile .burger div {

@@ -7,7 +7,6 @@
         class="hidden sm:flex sm:flex-col-reverse sm:justify-around sm:content-end"
       >
         <ThemeSwitch />
-
         <nuxt-link class="xl:mx-10 lg:mx-6 nav-link" to="/">
           <span class="text-xl">Accueil</span>
         </nuxt-link>
@@ -66,6 +65,7 @@
           </nuxt-link>
         </li>
       </ul>
+      <ThemeSwitch class="block absolute bottom-0 mb-20" />
     </div>
   </div>
 </template>
