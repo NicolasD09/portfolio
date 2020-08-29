@@ -45,10 +45,10 @@
 }
 
 .mobile #navbar {
-  position: absolute;
+  position: fixed;
   right: 0;
-  height: 100%;
   top: 0;
+  bottom: 0;
   width: 20vh;
   align-items: center;
   transform: translateX(100%);
