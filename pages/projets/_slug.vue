@@ -5,7 +5,7 @@
         <div v-for="project in allProject" :key="project._key">
           <div class="mx-auto py-6 sm:p-8">
             <div
-              class="flex flex-col lg:grid lg:grid-rows-1 lg:grid-cols-2 w-10/12 xl:w-8/12 mx-auto py-8"
+              class="flex flex-col lg:grid lg:grid-rows-1 lg:grid-cols-2 lg:gap-8 w-10/12 xl:w-8/12 mx-auto py-8"
             >
               <div>
                 <h1 class="text-2xl lg:text-4xl font-medium">
@@ -44,7 +44,7 @@
                   >
                 </div>
               </div>
-              <div class="flex flex-row justify-center">
+              <div class="flex flex-row justify-center mt-8 lg:mt-0">
                 <div
                   v-if="project.image"
                   class="overflow-y-auto flex flex-row justify-center"

@@ -1,5 +1,5 @@
 <template>
-  <div class="page__container">
+  <div class="page__container mt-8">
     <transition name="project-fade">
       <div v-if="this.main_show">
         <div
@@ -89,13 +89,13 @@
         class="hidden sm:block projects__img__bottom"
       />
     </div>
-    <div>
+    <!-- <div>
       <img
         src="~/assets/img/curves_right.webp"
         alt="curves right"
         class="hidden sm:block projects__img__right absolute bottom-0 right-0"
       />
-    </div>
+    </div> -->
   </div>
 </template>
 

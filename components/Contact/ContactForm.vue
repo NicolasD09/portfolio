@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-10/12 mx-auto">
+  <div class="w-full md:w-10/12 mx-auto my-auto">
     <div
       class="flex flex-col items-center xl:grid xl:grid-cols-2 xl:grid-rows-1"
     >
@@ -154,7 +154,7 @@ export default {
         this.errorEmail();
       } else if (!honeypot.checked) {
         await this.$axios
-          .post("https://submit-form.com/5yaFzLJu-zSPW8AwfjbL_", {
+          .post("https://submit-form.com/Y2NqDlxV_eA1jO7NOsn-P", {
             surname: this.surname,
             name: this.name,
             object: this.objet,

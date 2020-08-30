@@ -60,14 +60,25 @@ export const getProject = gql`
 `;
 export const getExperiences = gql`
   query getExperience {
-    allExperience(sort: [{ date_fin: DESC }]) {
-      title
-      _id
-      date_debut
-      date_fin
-      job_type
-      job_descriptionRaw
-      duree
+    allExperience(sort: [{ end_date: DESC }]) {
+      title {
+        fr
+        en
+      }
+      job_description {
+        fr
+        en
+      }
+      start_date
+      end_date
+      time_span {
+        fr
+        en
+      }
+      job_type {
+        fr
+        en
+      }
       city
       company
     }
@@ -82,6 +93,18 @@ export const getHomepage = gql`
         en
       }
       tagline {
+        fr
+        en
+      }
+    }
+  }
+`;
+
+export const getExperienceData = gql`
+  query getExperienceData {
+    allExperiencesPage {
+      _id
+      experience_title {
         fr
         en
       }
