@@ -38,7 +38,7 @@
           >
             <img
               class="home__right__image"
-              src="~/assets/img/home_bg_lg.jpg"
+              src="~/assets/img/home_bg_md.jpg"
               alt="image de bureau"
             />
           </div>
