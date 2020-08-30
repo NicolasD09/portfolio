@@ -41,6 +41,7 @@
     bottom: 0;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
     background-color: var(--bg-color);
+    overflow: hidden;
   }
 }
 
@@ -69,23 +70,6 @@
   margin-bottom: 8em;
 }
 
-.mobile .burger div {
-  width: 35px;
-  height: 2px;
-  margin: 4px;
-  border-radius: 5px;
-  background-color: var(--text-color);
-  transition: all 0.3s ease;
-  z-index: 999;
-}
-
-.mobile .burger div:nth-child(2) {
-  width: 22px;
-}
-.mobile .burger div:nth-child(1) {
-  margin-top: 0;
-}
-
 .mobile #navbar.nav-active {
   transform: translateX(0);
   box-shadow: -3px 0 15px rgba(0, 0, 0, 0.3);
@@ -95,18 +79,66 @@
   width: fit-content;
 }
 
-.burger.toggle {
-  background-color: transparent;
+.menu_icon_container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.mobile .toggle .line1 {
-  transform: rotate(-45deg) translate(-11px, 3px);
+.gg-menu,
+.gg-close {
+  /* transform: scale(var(--ggs, 1)); */
+  transform-origin: bottom left;
 }
-.mobile .toggle .line2 {
-  opacity: 0;
+.gg-menu,
+.gg-menu::after,
+.gg-menu::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 2px;
+  border-radius: 3px;
+  background: var(--text-color);
 }
-.mobile .toggle .line3 {
-  transform: rotate(45deg) translate(-11px, -3px);
+.gg-menu::after,
+.gg-menu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+}
+.gg-menu::after {
+  top: 8px;
+}
+
+.gg-close {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  /* transform: scale(var(--ggs, 1)); */
+  width: 30px;
+  height: 30px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  z-index: 51;
+}
+
+.gg-close::after,
+.gg-close::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: var(--text-color);
+  transform: rotate(45deg);
+  border-radius: 5px;
+  top: 12px;
+  left: -2px;
+}
+.gg-close::after {
+  transform: rotate(-45deg);
 }
 
 /* Navlinks transitions */
@@ -140,4 +172,26 @@ a.nuxt-link-exact-active::after {
   height: 3px;
   width: 100%;
   background-color: var(--light-blue);
+}
+
+/* Animations */
+
+.fade-spin-enter {
+  transition: all 0.3s linear;
+}
+
+.fade-spin-enter-active {
+  transition: all 0.3s linear;
+  transition-delay: 0.3s;
+}
+
+.fade-spin-leave-active {
+  transition: all 0.3s linear;
+}
+
+.fade-spin-enter,
+.fade-spin-leave-to {
+  opacity: 0;
+  transform: rotate(180deg) translateY(50px);
+  transform-origin: center;
 }

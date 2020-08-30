@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex flex-row justify-center items-center px-2 mobile_nav sm:desktop_nav sm:justify-around z-50 sm:bg-transparent"
+      class="flex flex-row items-center mobile_nav sm:desktop_nav sm:justify-around z-50 sm:bg-transparent"
     >
       <div
         class="hidden sm:flex sm:flex-col-reverse sm:justify-around sm:content-end"
@@ -27,14 +27,20 @@
           <span class="text-xl">Contact</span>
         </nuxt-link>
       </div>
-      <div
-        class="burger cursor-pointer sm:hidden flex flex-col items-end h-auto"
-        @click="navSlide"
-      >
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
+
+      <transition name="fade-spin">
+        <div class="menu_icon_container" v-if="closeShow">
+          <i class="gg-close gg-icon" @click="navSlide"></i>
+        </div>
+      </transition>
+      <transition name="fade-spin">
+        <div
+          class="h-6 flex flex-row justify-center items-center menu_icon_container"
+          v-if="!closeShow"
+        >
+          <i class="gg-menu gg-icon" @click="navSlide"></i>
+        </div>
+      </transition>
     </div>
 
     <div class="flex flex-col" id="navbar">
@@ -54,11 +60,11 @@
             <span class="text-md">Expériences</span>
           </nuxt-link>
         </li>
-        <!-- <li class="my-5" @click="navSlide">
+        <li class="my-5" @click="navSlide">
           <nuxt-link to="/about">
             <span class="text-md">A propos</span>
           </nuxt-link>
-        </li> -->
+        </li>
         <li class="my-5" @click="navSlide">
           <nuxt-link to="/contact">
             <span class="text-md">Contact</span>
@@ -72,15 +78,21 @@
 
 <script>
 import ThemeSwitch from "@/components/ThemeSwitch/ThemeSwitch";
+// import "css.gg/icons/css/menu.css";
 
 export default {
+  data() {
+    return {
+      closeShow: false
+    };
+  },
   methods: {
     navSlide() {
-      const burger = document.querySelector(".mobile .burger");
+      const burger = document.querySelector(".mobile i.gg-icon");
       const nav = document.querySelector(".mobile #navbar");
+      burger.classList.toggle("active");
       nav.classList.toggle("nav-active");
-      console.log(nav.classList);
-      burger.classList.toggle("toggle");
+      this.closeShow = !this.closeShow;
     }
   },
   components: {
