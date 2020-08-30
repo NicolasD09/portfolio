@@ -201,6 +201,7 @@ export default {
   position: fixed;
   left: 0;
   bottom: -10%;
+  z-index: -2;
 }
 
 .error_message {
