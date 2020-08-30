@@ -6,6 +6,9 @@
       <div class="w-1/4 h-20 rounded-lg error_message">
         <p>Tous les champs doivent être remplis</p>
       </div>
+      <div class="w-1/4 h-20 rounded-lg email_sent">
+        <p>Votre message a bien été envoyé !</p>
+      </div>
       <div class="mx-auto xl:w-6/12">
         <!-- <h1 class="text-5xl">Contactez-moi !</h1> -->
         <div class="flex flex-col items-center justify-between mt-12">
@@ -88,6 +91,14 @@
                 v-model="message"
               ></textarea>
               <label class="font-regular text-lg" for="message">Message</label>
+              <input
+                type="checkbox"
+                name="_honeypot"
+                tabindex="-1"
+                autocomplete="off"
+                class="honeypot"
+                style="display:none"
+              />
             </div>
             <button type="submit">
               <Button type="primary" class="mt-8">
@@ -125,7 +136,6 @@ export default {
     errorEmail() {
       console.log("error email");
       const popup = document.querySelector(".error_message");
-      console.log(popup.classList);
       popup.classList.toggle("active");
       setTimeout(() => {
         popup.classList.toggle("active");
@@ -133,14 +143,16 @@ export default {
       }, 3000);
     },
     async submitForm() {
+      const honeypot = document.querySelector(".honeypot");
       if (
         this.name == "" ||
         this.surname == "" ||
         this.objet == "" ||
-        this.message == ""
+        this.message == "" ||
+        honeypot.checked
       ) {
         this.errorEmail();
-      } else {
+      } else if (!honeypot.checked) {
         await this.$axios
           .post("https://submit-form.com/5yaFzLJu-zSPW8AwfjbL_", {
             surname: this.surname,
@@ -148,7 +160,17 @@ export default {
             object: this.objet,
             message: this.message
           })
-          .then(res => console.log(res))
+          .then(res => {
+            this.name = "";
+            this.surname = "";
+            this.objet = "";
+            this.message = "";
+            const popup = document.querySelector(".email_sent");
+            popup.classList.toggle("active");
+            setTimeout(() => {
+              popup.classList.toggle("active");
+            }, 3000);
+          })
           .catch(res => console.error(res));
       }
     }
@@ -174,8 +196,25 @@ export default {
   opacity: 0;
 }
 
-.error_message.active {
+.error_message.active,
+.email_sent.active {
   opacity: 1;
+}
+.email_sent {
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border: 2px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.35);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
 }
 
 input,
