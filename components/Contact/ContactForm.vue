@@ -111,6 +111,7 @@
         </form>
       </div>
     </div>
+    <img src="~/assets/img/angle_corner.webp" class="angle_corner" />
   </div>
 </template>
 
@@ -179,6 +180,12 @@ export default {
 </script>
 
 <style scoped>
+.angle_corner {
+  position: fixed;
+  left: 0;
+  bottom: -10%;
+}
+
 .error_message {
   position: absolute;
   top: 3em;
