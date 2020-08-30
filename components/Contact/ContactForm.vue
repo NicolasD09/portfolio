@@ -3,6 +3,9 @@
     <div
       class="flex flex-col items-center xl:grid xl:grid-cols-2 xl:grid-rows-1"
     >
+      <div class="w-1/4 h-20 rounded-lg error_message">
+        <p>Tous les champs doivent être remplis</p>
+      </div>
       <div class="mx-auto xl:w-6/12">
         <!-- <h1 class="text-5xl">Contactez-moi !</h1> -->
         <div class="flex flex-col items-center justify-between mt-12">
@@ -37,7 +40,7 @@
       >
         <form
           class="w-11/12 py-12 h-full flex flex-col justify-around mx-auto"
-          @submit.prevent="sendMail"
+          @submit.prevent="submitForm"
         >
           <div
             class="w-9/12 mx-auto flex flex-col md:flex-row justify-between md:mb-16"
@@ -47,6 +50,7 @@
                 type="text"
                 class="border-b-2 bg-transparent"
                 name="surname"
+                v-model="surname"
               />
               <label class="font-regular text-lg" for="surname">Nom</label>
             </div>
@@ -55,6 +59,7 @@
                 type="text"
                 class="border-b-2 bg-transparent"
                 name="name"
+                v-model="name"
               />
               <label class="font-regular text-lg" for="name">Prénom</label>
             </div>
@@ -63,8 +68,9 @@
             <div class="flex flex-col">
               <input
                 type="text"
-                name="objet"
+                name="object"
                 class="border-b-2 bg-transparent"
+                v-model="objet"
               />
               <label class="font-regular text-lg" for="subject" name="objet"
                 >Objet</label
@@ -79,19 +85,17 @@
                 cols="30"
                 rows="10"
                 class="border-b-2 bg-transparent"
+                v-model="message"
               ></textarea>
               <label class="font-regular text-lg" for="message">Message</label>
             </div>
-            <Button
-              type="primary"
-              class="mt-8"
-              disabled
-              title="Le formulaire n'est pas encore fonctionnel"
-            >
-              <span>
-                Envoyer
-              </span>
-            </Button>
+            <button type="submit">
+              <Button type="primary" class="mt-8">
+                <span>
+                  Envoyer
+                </span>
+              </Button>
+            </button>
           </div>
         </form>
       </div>
@@ -101,9 +105,12 @@
 
 <script>
 import Button from "@/components/Button/Button";
+// import axios from "@nuxtjs/axios";
+
 export default {
   data() {
     return {
+      errorMessage: false,
       email: false,
       surname: "",
       name: "",
@@ -115,14 +122,62 @@ export default {
     revealEmail() {
       this.email = !this.email;
     },
-    sendMail() {
-      console.log("mail sent");
+    errorEmail() {
+      console.log("error email");
+      const popup = document.querySelector(".error_message");
+      console.log(popup.classList);
+      popup.classList.toggle("active");
+      setTimeout(() => {
+        popup.classList.toggle("active");
+        this.errorMessage = false;
+      }, 3000);
+    },
+    async submitForm() {
+      if (
+        this.name == "" ||
+        this.surname == "" ||
+        this.objet == "" ||
+        this.message == ""
+      ) {
+        this.errorEmail();
+      } else {
+        await this.$axios
+          .post("https://submit-form.com/5yaFzLJu-zSPW8AwfjbL_", {
+            surname: this.surname,
+            name: this.name,
+            object: this.objet,
+            message: this.message
+          })
+          .then(res => console.log(res))
+          .catch(res => console.error(res));
+      }
     }
   }
 };
 </script>
 
 <style scoped>
+.error_message {
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border: 2px solid firebrick;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.35);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.error_message.active {
+  opacity: 1;
+}
+
 input,
 textarea {
   border-bottom: 2px solid var(--links-color);
@@ -133,13 +188,13 @@ input:focus,
 textarea:focus {
   outline: none;
   /* border-bottom: 2px solid var(--light-blue); */
-  transition: all 0.5s ease-in-out;
+  transition: all 0.1s linear;
   border: 2px solid var(--light-blue);
   border-radius: 5px;
 }
 
-input:focus + label,
-textarea:focus + label {
+input + label,
+textarea + label {
   transform: translateY(-30px);
   transition: all 0.4s cubic-bezier(0.72, 0.16, 0.36, 1.58);
 }

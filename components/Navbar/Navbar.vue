@@ -27,12 +27,6 @@
           <span class="text-xl">Contact</span>
         </nuxt-link>
       </div>
-
-      <!-- <transition name="fade-spin">
-        <div class="menu_icon_container" v-if="closeShow">
-          <i class="gg-close gg-icon" @click="navSlide"></i>
-        </div>
-      </transition> -->
       <div
         class="h-6 flex flex-row justify-center items-center menu_icon_container"
       >
