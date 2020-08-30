@@ -28,19 +28,16 @@
         </nuxt-link>
       </div>
 
-      <transition name="fade-spin">
+      <!-- <transition name="fade-spin">
         <div class="menu_icon_container" v-if="closeShow">
           <i class="gg-close gg-icon" @click="navSlide"></i>
         </div>
-      </transition>
-      <transition name="fade-spin">
-        <div
-          class="h-6 flex flex-row justify-center items-center menu_icon_container"
-          v-if="!closeShow"
-        >
-          <i class="gg-menu gg-icon" @click="navSlide"></i>
-        </div>
-      </transition>
+      </transition> -->
+      <div
+        class="h-6 flex flex-row justify-center items-center menu_icon_container"
+      >
+        <i class="gg-menu" id="icon" @click="navSlide"></i>
+      </div>
     </div>
 
     <div class="flex flex-col" id="navbar">
@@ -78,7 +75,6 @@
 
 <script>
 import ThemeSwitch from "@/components/ThemeSwitch/ThemeSwitch";
-// import "css.gg/icons/css/menu.css";
 
 export default {
   data() {
@@ -88,11 +84,12 @@ export default {
   },
   methods: {
     navSlide() {
-      const burger = document.querySelector(".mobile i.gg-icon");
+      const burger = document.querySelector(".mobile #icon");
       const nav = document.querySelector(".mobile #navbar");
-      burger.classList.toggle("active");
       nav.classList.toggle("nav-active");
-      this.closeShow = !this.closeShow;
+
+      burger.classList.toggle("gg-menu");
+      burger.classList.toggle("gg-close");
     }
   },
   components: {

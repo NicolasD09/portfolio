@@ -79,20 +79,20 @@
   width: fit-content;
 }
 
-.menu_icon_container {
+.mobile .menu_icon_container {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.gg-menu,
-.gg-close {
+.mobile .gg-menu,
+.mobile .gg-close {
   /* transform: scale(var(--ggs, 1)); */
   transform-origin: bottom left;
 }
-.gg-menu,
-.gg-menu::after,
-.gg-menu::before {
+.mobile .gg-menu,
+.mobile .gg-menu::after,
+.mobile .gg-menu::before {
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -101,17 +101,17 @@
   border-radius: 3px;
   background: var(--text-color);
 }
-.gg-menu::after,
-.gg-menu::before {
+.mobile .gg-menu::after,
+.mobile .gg-menu::before {
   content: "";
   position: absolute;
   top: -8px;
 }
-.gg-menu::after {
+.mobile .gg-menu::after {
   top: 8px;
 }
 
-.gg-close {
+.mobile .gg-close {
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -123,8 +123,8 @@
   z-index: 51;
 }
 
-.gg-close::after,
-.gg-close::before {
+.mobile .gg-close::after,
+.mobile .gg-close::before {
   content: "";
   display: block;
   box-sizing: border-box;
@@ -137,7 +137,7 @@
   top: 12px;
   left: -2px;
 }
-.gg-close::after {
+.mobile .gg-close::after {
   transform: rotate(-45deg);
 }
 
@@ -174,24 +174,17 @@ a.nuxt-link-exact-active::after {
   background-color: var(--light-blue);
 }
 
-/* Animations */
-
-.fade-spin-enter {
-  transition: all 0.3s linear;
+@keyframes spin {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
-.fade-spin-enter-active {
-  transition: all 0.3s linear;
-  transition-delay: 0.3s;
-}
-
-.fade-spin-leave-active {
-  transition: all 0.3s linear;
-}
-
-.fade-spin-enter,
-.fade-spin-leave-to {
-  opacity: 0;
-  transform: rotate(180deg) translateY(50px);
-  transform-origin: center;
+.mobile #icon.animate {
+  animation: spin 0.3s linear;
 }
