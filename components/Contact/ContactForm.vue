@@ -80,6 +80,19 @@
               >
             </div>
           </div>
+          <div class="w-9/12 mx-auto mb-16">
+            <div class="flex flex-col">
+              <input
+                type="email"
+                name="email"
+                class="border-b-2 bg-transparent"
+                v-model="email"
+              />
+              <label class="font-regular text-lg" for="subject" name="objet"
+                >Adresse mail</label
+              >
+            </div>
+          </div>
           <div class="w-9/12 mx-auto">
             <div class="flex flex-col">
               <textarea
@@ -126,6 +139,7 @@ export default {
       email: false,
       surname: "",
       name: "",
+      email: "",
       objet: "",
       message: ""
     };
@@ -148,6 +162,7 @@ export default {
       if (
         this.name == "" ||
         this.surname == "" ||
+        this.email == "" ||
         this.objet == "" ||
         this.message == "" ||
         honeypot.checked
@@ -158,12 +173,14 @@ export default {
           .post("https://submit-form.com/Y2NqDlxV_eA1jO7NOsn-P", {
             surname: this.surname,
             name: this.name,
+            email: this.email,
             object: this.objet,
             message: this.message
           })
           .then(res => {
             this.name = "";
             this.surname = "";
+            this.email = "";
             this.objet = "";
             this.message = "";
             const popup = document.querySelector(".email_sent");
