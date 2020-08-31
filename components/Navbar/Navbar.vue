@@ -30,7 +30,10 @@
       <div
         class="h-6 flex flex-row justify-center items-center menu_icon_container"
       >
-        <i class="gg-menu" id="icon" @click="navSlide"></i>
+        <nuxt-link to="/" class="noborder">
+          <i class="gg-home-alt mx-4"></i>
+        </nuxt-link>
+        <i class="gg-menu mx-4" id="icon" @click="navSlide"></i>
       </div>
     </div>
 
@@ -51,11 +54,11 @@
             <span class="text-md">Expériences</span>
           </nuxt-link>
         </li>
-        <li class="my-5" @click="navSlide">
+        <!-- <li class="my-5" @click="navSlide">
           <nuxt-link to="/about">
             <span class="text-md">A propos</span>
           </nuxt-link>
-        </li>
+        </li> -->
         <li class="my-5" @click="navSlide">
           <nuxt-link to="/contact">
             <span class="text-md">Contact</span>
