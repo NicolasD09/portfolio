@@ -56,7 +56,15 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
-    "@nuxtjs/apollo"
+    "@nuxtjs/apollo",
+    "nuxt-i18n",
+    {
+      locales: ["fr", "en"],
+      defaultLocale: "fr",
+      vueI18n: {
+        fallbackLocale: "en"
+      }
+    }
   ],
 
   apollo: {
@@ -73,7 +81,7 @@ export default {
           credentials: "same-origin"
         },
         ssr: true,
-        fetchPolicy: 'no-cache'
+        fetchPolicy: "no-cache"
       }
     }
   },
