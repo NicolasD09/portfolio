@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-10/12 mx-auto my-auto">
+  <div class="w-full mx-auto my-auto md:w-10/12">
     <div
       class="flex flex-col items-center xl:grid xl:grid-cols-2 xl:grid-rows-1"
     >
@@ -12,7 +12,7 @@
       <div class="mx-auto xl:w-6/12">
         <!-- <h1 class="text-5xl">Contactez-moi !</h1> -->
         <div class="flex flex-col items-center justify-between mt-12">
-          <span class="text-xl md:text-2xl mb-6">
+          <span class="mb-6 text-xl md:text-2xl">
             Je suis également actif sur Twitter :
           </span>
           <a class="mx-5" href="https://twitter.com/NDX_dev" target="_blank">
@@ -20,7 +20,7 @@
           </a>
         </div>
         <div class="flex flex-col items-center justify-between mt-12">
-          <span class="text-xl md:text-2xl mb-6"
+          <span class="mb-6 text-xl md:text-2xl"
             >Sinon, envoyez-moi un mail :</span
           >
           <span @click="revealEmail">
@@ -31,7 +31,7 @@
             </Button>
           </span>
           <transition name="link-fade">
-            <span v-if="email" class="text-2xl mt-32 tracking-wider absolute"
+            <span v-if="email" class="absolute mt-32 text-2xl tracking-wider"
               >nidcx.dev<span class="text-3xl font-medium">@</span
               >gmail.com</span
             >
@@ -39,32 +39,32 @@
         </div>
       </div>
       <div
-        class="form-container flex p-6 mb-10 xl:mb-0 mt-16 xl:mt-0 items-center w-full"
+        class="flex items-center w-full p-6 mt-16 mb-10 form-container xl:mb-0 xl:mt-0"
       >
         <form
-          class="w-11/12 py-12 h-full flex flex-col justify-around mx-auto"
+          class="flex flex-col justify-around w-11/12 h-full py-12 mx-auto"
           @submit.prevent="submitForm"
         >
           <div
-            class="w-9/12 mx-auto flex flex-col md:flex-row justify-between md:mb-16"
+            class="flex flex-col justify-between w-9/12 mx-auto md:flex-row md:mb-16"
           >
-            <div class="md:w-5/12 w-full flex flex-col mb-10 lg:mb-0">
+            <div class="flex flex-col w-full mb-10 md:w-5/12 lg:mb-0">
               <input
                 type="text"
-                class="border-b-2 bg-transparent"
+                class="bg-transparent border-b-2"
                 name="surname"
                 v-model="surname"
               />
-              <label class="font-regular text-lg" for="surname">Nom</label>
+              <label class="text-lg font-regular" for="surname">Nom</label>
             </div>
-            <div class="md:w-5/12 w-full flex flex-col mb-10 lg:mb-0">
+            <div class="flex flex-col w-full mb-10 md:w-5/12 lg:mb-0">
               <input
                 type="text"
-                class="border-b-2 bg-transparent"
+                class="bg-transparent border-b-2"
                 name="name"
                 v-model="name"
               />
-              <label class="font-regular text-lg" for="name">Prénom</label>
+              <label class="text-lg font-regular" for="name">Prénom</label>
             </div>
           </div>
           <div class="w-9/12 mx-auto mb-16">
@@ -72,10 +72,10 @@
               <input
                 type="text"
                 name="object"
-                class="border-b-2 bg-transparent"
+                class="bg-transparent border-b-2"
                 v-model="objet"
               />
-              <label class="font-regular text-lg" for="subject" name="objet"
+              <label class="text-lg font-regular" for="subject" name="objet"
                 >Objet</label
               >
             </div>
@@ -85,10 +85,10 @@
               <input
                 type="email"
                 name="email"
-                class="border-b-2 bg-transparent"
+                class="bg-transparent border-b-2"
                 v-model="email"
               />
-              <label class="font-regular text-lg" for="subject" name="objet"
+              <label class="text-lg font-regular" for="subject" name="objet"
                 >Adresse mail</label
               >
             </div>
@@ -100,10 +100,10 @@
                 id="message"
                 cols="30"
                 rows="10"
-                class="border-b-2 bg-transparent"
+                class="bg-transparent border-b-2"
                 v-model="message"
               ></textarea>
-              <label class="font-regular text-lg" for="message">Message</label>
+              <label class="text-lg font-regular" for="message">Message</label>
               <input
                 type="checkbox"
                 name="_honeypot"

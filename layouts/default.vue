@@ -1,15 +1,6 @@
 <template>
   <div v-bind:class="theme" id="app">
-    <div class="layout hidden sm:grid">
-      <Navbar />
-      <Nuxt />
-    </div>
-    <div class="sm:hidden mobile">
-      <div class="pb-55 layout_mobile sm:hidden">
-        <Nuxt />
-      </div>
-      <Navbar />
-    </div>
+    <Nuxt />
   </div>
 </template>
 
